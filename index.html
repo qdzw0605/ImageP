@@ -2266,6 +2266,93 @@
           默认平滑纹理减轻「方块感」；强度上限已提高。强度为与原图混合。
         </p>
       </div>
+      <div id="filterExposureRecoveryExtra" class="modal-field" hidden>
+        <div class="modal-value-row" style="margin-top: 0">
+          <span class="param-label-line">
+            <span>整体曝光</span>
+            <button type="button" class="param-default-dot" data-reset-key="erExp" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterErExpVal">0 EV</strong>
+        </div>
+        <input type="range" id="filterErExp" min="0" max="100" value="50" step="1" aria-label="50 为 0 EV；偏左压暗、偏右提亮（近似 ±0.55 挡）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>阴影抬起</span>
+            <button type="button" class="param-default-dot" data-reset-key="erShadow" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterErShadowVal">40%</strong>
+        </div>
+        <input type="range" id="filterErShadow" min="0" max="100" value="40" step="1" aria-label="主要垫亮暗部与深灰，少动高光" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>高光回收</span>
+            <button type="button" class="param-default-dot" data-reset-key="erHighlight" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterErHighlightVal">36%</strong>
+        </div>
+        <input type="range" id="filterErHighlight" min="0" max="100" value="36" step="1" aria-label="柔化最亮区域，减轻过曝与刺眼" />
+        <p class="anchor-hint" style="margin: 0.35rem 0 0; font-size: 0.78rem">
+          先整体曝光，再按亮度垫阴影、压高光；适合逆光与欠曝片。强度为与原图混合。
+        </p>
+      </div>
+      <div id="filterTempTintExtra" class="modal-field" hidden>
+        <div class="modal-value-row" style="margin-top: 0">
+          <span class="param-label-line">
+            <span>色温</span>
+            <button type="button" class="param-default-dot" data-reset-key="ctWarmth" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterCtWarmthVal">中性</strong>
+        </div>
+        <input type="range" id="filterCtWarmth" min="0" max="100" value="50" step="1" aria-label="偏冷偏蓝绿、偏暖偏红黄" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>绿品（洋红）</span>
+            <button type="button" class="param-default-dot" data-reset-key="ctTint" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterCtTintVal">中性</strong>
+        </div>
+        <input type="range" id="filterCtTint" min="0" max="100" value="50" step="1" aria-label="偏绿 / 偏洋红，常见白平衡微调" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>校正强度</span>
+            <button type="button" class="param-default-dot" data-reset-key="ctAmount" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterCtAmountVal">58%</strong>
+        </div>
+        <input type="range" id="filterCtAmount" min="0" max="100" value="58" step="1" aria-label="色温绿品作用在像素上的幅度（再乘弹窗强度）" />
+        <p class="anchor-hint" style="margin: 0.35rem 0 0; font-size: 0.78rem">
+          类似相机白平衡：冷暖与绿/洋红轴，强度可控。强度为与原图混合。
+        </p>
+      </div>
+      <div id="filterAtmosFogExtra" class="modal-field" hidden>
+        <div class="modal-value-row" style="margin-top: 0">
+          <span class="param-label-line">
+            <span>雾气浓度</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgAmount" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgAmountVal">34%</strong>
+        </div>
+        <input type="range" id="filterFgAmount" min="0" max="100" value="34" step="1" aria-label="向灰雾色混合，略降对比" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>天空偏重</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgSky" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgSkyVal">52%</strong>
+        </div>
+        <input type="range" id="filterFgSky" min="0" max="100" value="52" step="1" aria-label="0 接近均匀薄雾；100 明显从上缘（画面上方）更雾" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>冷色雾</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgCool" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgCoolVal">46%</strong>
+        </div>
+        <input type="range" id="filterFgCool" min="0" max="100" value="46" step="1" aria-label="雾偏冷蓝或偏中性灰" />
+        <p class="anchor-hint" style="margin: 0.35rem 0 0; font-size: 0.78rem">
+          空气透视 / 薄雾：可做出远山、阴天或梦境感。强度为与原图混合。
+        </p>
+      </div>
       <div class="modal-actions">
         <button type="button" id="filterModalFavorite" class="secondary op-fav-btn" title="将当前参数存为收藏" aria-label="收藏当前参数">☆</button>
         <button type="button" id="filterModalCancel" class="secondary">取消</button>
@@ -2320,6 +2407,9 @@
                   <button type="button" class="secondary js-filter-open" data-filter="fx_soft_glow" disabled title="亮部柔光：强度、半径、高光、亮角、晕光色温与饱和度；强度为与原图混合">柔光晕映…</button>
                   <button type="button" class="secondary js-filter-open" data-filter="fx_bleach_bypass" disabled title="漂白旁路：去饱和、对比、冷暖、暗部抬起、高光压实、残留色彩；强度为与原图混合">漂白旁路…</button>
                   <button type="button" class="secondary js-filter-open" data-filter="fx_analog_grain" disabled title="胶片颗粒：强度、粗细、彩色、纹理类型、阴影加重；强度为与原图混合">胶片颗粒…</button>
+                  <button type="button" class="secondary js-filter-open" data-filter="fx_exposure_recovery" disabled title="曝光、阴影抬起、高光回收；强度为与原图混合">曝光恢复…</button>
+                  <button type="button" class="secondary js-filter-open" data-filter="fx_temp_tint" disabled title="色温与绿/洋红（白平衡式）；强度为与原图混合">色温绿品…</button>
+                  <button type="button" class="secondary js-filter-open" data-filter="fx_atmospheric_fog" disabled title="薄雾纵深：浓度、天空偏重、冷色雾；强度为与原图混合">薄雾纵深…</button>
                   <button type="button" class="secondary js-filter-open" data-filter="halftone" disabled title="调幅网点：单元格、角度、纸墨色等可调">印刷网点…</button>
                   <button type="button" class="secondary js-filter-open aside-span-2" data-filter="if_adventure" disabled title="parser / MUD 向画面预设：终端、卷轴、光照、气氛等多种子风格">IF 文字冒险…</button>
                 </div>
@@ -2608,6 +2698,27 @@
       const filterGrainTexture = document.getElementById("filterGrainTexture");
       const filterGrainShadow = document.getElementById("filterGrainShadow");
       const filterGrainShadowVal = document.getElementById("filterGrainShadowVal");
+      const filterExposureRecoveryExtra = document.getElementById("filterExposureRecoveryExtra");
+      const filterErExp = document.getElementById("filterErExp");
+      const filterErExpVal = document.getElementById("filterErExpVal");
+      const filterErShadow = document.getElementById("filterErShadow");
+      const filterErShadowVal = document.getElementById("filterErShadowVal");
+      const filterErHighlight = document.getElementById("filterErHighlight");
+      const filterErHighlightVal = document.getElementById("filterErHighlightVal");
+      const filterTempTintExtra = document.getElementById("filterTempTintExtra");
+      const filterCtWarmth = document.getElementById("filterCtWarmth");
+      const filterCtWarmthVal = document.getElementById("filterCtWarmthVal");
+      const filterCtTint = document.getElementById("filterCtTint");
+      const filterCtTintVal = document.getElementById("filterCtTintVal");
+      const filterCtAmount = document.getElementById("filterCtAmount");
+      const filterCtAmountVal = document.getElementById("filterCtAmountVal");
+      const filterAtmosFogExtra = document.getElementById("filterAtmosFogExtra");
+      const filterFgAmount = document.getElementById("filterFgAmount");
+      const filterFgAmountVal = document.getElementById("filterFgAmountVal");
+      const filterFgSky = document.getElementById("filterFgSky");
+      const filterFgSkyVal = document.getElementById("filterFgSkyVal");
+      const filterFgCool = document.getElementById("filterFgCool");
+      const filterFgCoolVal = document.getElementById("filterFgCoolVal");
       const filterIfAdventureExtra = document.getElementById("filterIfAdventureExtra");
       const filterIfAdventurePresetList = document.getElementById("filterIfAdventurePresetList");
       /** @type {HTMLElement|null} */
@@ -5066,6 +5177,15 @@
         } else if (name === "fx_analog_grain") {
           t = Math.max(0, Math.min(1, t));
           filterAnalogGrainMutate(d, w, h, t, filterAdjustOpts.analogGrain || {});
+        } else if (name === "fx_exposure_recovery") {
+          t = Math.max(0, Math.min(1, t));
+          filterExposureRecoveryMutate(d, w, h, t, filterAdjustOpts.exposureRecovery || {});
+        } else if (name === "fx_temp_tint") {
+          t = Math.max(0, Math.min(1, t));
+          filterTempTintMutate(d, w, h, t, filterAdjustOpts.tempTint || {});
+        } else if (name === "fx_atmospheric_fog") {
+          t = Math.max(0, Math.min(1, t));
+          filterAtmosphericFogMutate(d, w, h, t, filterAdjustOpts.atmosphericFog || {});
         } else if (name === "frosted") {
           filterFrostedMutate(d, w, h, frostedOpts || {});
         } else {
@@ -5312,6 +5432,9 @@
         fx_soft_glow: "柔光晕映",
         fx_bleach_bypass: "漂白旁路",
         fx_analog_grain: "胶片颗粒",
+        fx_exposure_recovery: "曝光恢复",
+        fx_temp_tint: "色温绿品",
+        fx_atmospheric_fog: "薄雾纵深",
         halftone: "印刷网点",
         if_adventure: "IF 文字冒险",
       };
@@ -5336,6 +5459,9 @@
           "漂白旁路（去饱和 + 对比 + 冷暖；暗部抬起、高光压实、残留色彩；强度为与原图混合）",
         fx_analog_grain:
           "胶片颗粒（平滑/块状/细点纹理 + 阴影加重；强度上限提高；强度为与原图混合）",
+        fx_exposure_recovery: "曝光恢复（整体曝光 EV、阴影抬起、高光回收；强度为与原图混合）",
+        fx_temp_tint: "色温绿品（冷暖 + 绿/洋红轴 + 校正强度；强度为与原图混合）",
+        fx_atmospheric_fog: "薄雾纵深（雾浓度、画面上方偏重、冷色雾；强度为与原图混合）",
         halftone:
           "印刷网点（调幅网屏：单元格、角度、墨点扩张、阶调、网格位移、形状、取样与纸墨色；强度为与原图混合）",
         if_adventure: "IF 文字冒险（选画面预设，再调强度；适合 parser / MUD 配图）",
@@ -5613,6 +5739,69 @@
         filterGrainShadowVal.textContent = filterGrainShadow.value + "%";
       }
 
+      function readExposureRecoveryOptionsFromDom() {
+        var e = Number(filterErExp.value);
+        var sh = Number(filterErShadow.value);
+        var hi = Number(filterErHighlight.value);
+        return {
+          exp: Number.isFinite(e) ? Math.max(0, Math.min(100, e)) : 50,
+          shadow: Number.isFinite(sh) ? Math.max(0, Math.min(100, sh)) : 40,
+          highlight: Number.isFinite(hi) ? Math.max(0, Math.min(100, hi)) : 36,
+        };
+      }
+
+      function syncExposureRecoveryParamLabels() {
+        var ex = Math.round(Number(filterErExp.value) || 50);
+        var ev = ((ex - 50) / 50) * 0.55;
+        if (Math.abs(ev) < 0.028) filterErExpVal.textContent = "0 EV";
+        else {
+          var evq = Math.round(ev * 20) / 20;
+          filterErExpVal.textContent = (evq > 0 ? "+" : "") + evq.toFixed(2).replace(/0+$/, "").replace(/\.$/, "") + " EV";
+        }
+        filterErShadowVal.textContent = filterErShadow.value + "%";
+        filterErHighlightVal.textContent = filterErHighlight.value + "%";
+      }
+
+      function readTempTintOptionsFromDom() {
+        var w = Number(filterCtWarmth.value);
+        var t = Number(filterCtTint.value);
+        var a = Number(filterCtAmount.value);
+        return {
+          warmth: Number.isFinite(w) ? Math.max(0, Math.min(100, w)) : 50,
+          tint: Number.isFinite(t) ? Math.max(0, Math.min(100, t)) : 50,
+          amount: Number.isFinite(a) ? Math.max(0, Math.min(100, a)) : 58,
+        };
+      }
+
+      function syncTempTintParamLabels() {
+        var cw = Math.round(Number(filterCtWarmth.value) || 50);
+        if (cw === 50) filterCtWarmthVal.textContent = "中性";
+        else if (cw > 50) filterCtWarmthVal.textContent = "偏暖 " + (cw - 50);
+        else filterCtWarmthVal.textContent = "偏冷 " + (50 - cw);
+        var ct = Math.round(Number(filterCtTint.value) || 50);
+        if (ct === 50) filterCtTintVal.textContent = "中性";
+        else if (ct > 50) filterCtTintVal.textContent = "偏洋红 " + (ct - 50);
+        else filterCtTintVal.textContent = "偏绿 " + (50 - ct);
+        filterCtAmountVal.textContent = filterCtAmount.value + "%";
+      }
+
+      function readAtmosphericFogOptionsFromDom() {
+        var am = Number(filterFgAmount.value);
+        var sk = Number(filterFgSky.value);
+        var cl = Number(filterFgCool.value);
+        return {
+          amount: Number.isFinite(am) ? Math.max(0, Math.min(100, am)) : 34,
+          sky: Number.isFinite(sk) ? Math.max(0, Math.min(100, sk)) : 52,
+          cool: Number.isFinite(cl) ? Math.max(0, Math.min(100, cl)) : 46,
+        };
+      }
+
+      function syncAtmosphericFogParamLabels() {
+        filterFgAmountVal.textContent = filterFgAmount.value + "%";
+        filterFgSkyVal.textContent = filterFgSky.value + "%";
+        filterFgCoolVal.textContent = filterFgCool.value + "%";
+      }
+
       /** @param {string} type filterModalType.value */
       function buildFilterAdjustOptsFromDom(type) {
         if (type === "hand_pencil") return { handPencil: readHandPencilOptionsFromDom() };
@@ -5624,6 +5813,9 @@
         if (type === "fx_soft_glow") return { softGlow: readSoftGlowOptionsFromDom() };
         if (type === "fx_bleach_bypass") return { bleachBypass: readBleachBypassOptionsFromDom() };
         if (type === "fx_analog_grain") return { analogGrain: readAnalogGrainOptionsFromDom() };
+        if (type === "fx_exposure_recovery") return { exposureRecovery: readExposureRecoveryOptionsFromDom() };
+        if (type === "fx_temp_tint") return { tempTint: readTempTintOptionsFromDom() };
+        if (type === "fx_atmospheric_fog") return { atmosphericFog: readAtmosphericFogOptionsFromDom() };
         return undefined;
       }
 
@@ -5863,6 +6055,27 @@
           d.grainShadow = 0;
           return d;
         }
+        if (t === "fx_exposure_recovery") {
+          d.strength = 90;
+          d.erExp = 50;
+          d.erShadow = 40;
+          d.erHighlight = 36;
+          return d;
+        }
+        if (t === "fx_temp_tint") {
+          d.strength = 86;
+          d.ctWarmth = 50;
+          d.ctTint = 50;
+          d.ctAmount = 58;
+          return d;
+        }
+        if (t === "fx_atmospheric_fog") {
+          d.strength = 78;
+          d.fgAmount = 34;
+          d.fgSky = 52;
+          d.fgCool = 46;
+          return d;
+        }
         return d;
       }
 
@@ -5975,6 +6188,30 @@
           s.grainColor = Number(filterGrainColor.value) || 0;
           s.grainTexture = normalizeGrainTexture(filterGrainTexture && filterGrainTexture.value);
           s.grainShadow = Number(filterGrainShadow.value) || 0;
+        }
+        if (type === "fx_exposure_recovery") {
+          var erE = Number(filterErExp.value);
+          s.erExp = Number.isFinite(erE) ? Math.max(0, Math.min(100, erE)) : 50;
+          var erS = Number(filterErShadow.value);
+          s.erShadow = Number.isFinite(erS) ? Math.max(0, Math.min(100, erS)) : 40;
+          var erH = Number(filterErHighlight.value);
+          s.erHighlight = Number.isFinite(erH) ? Math.max(0, Math.min(100, erH)) : 36;
+        }
+        if (type === "fx_temp_tint") {
+          var ctW = Number(filterCtWarmth.value);
+          s.ctWarmth = Number.isFinite(ctW) ? Math.max(0, Math.min(100, ctW)) : 50;
+          var ctT = Number(filterCtTint.value);
+          s.ctTint = Number.isFinite(ctT) ? Math.max(0, Math.min(100, ctT)) : 50;
+          var ctA = Number(filterCtAmount.value);
+          s.ctAmount = Number.isFinite(ctA) ? Math.max(0, Math.min(100, ctA)) : 58;
+        }
+        if (type === "fx_atmospheric_fog") {
+          var fgA = Number(filterFgAmount.value);
+          s.fgAmount = Number.isFinite(fgA) ? Math.max(0, Math.min(100, fgA)) : 34;
+          var fgS = Number(filterFgSky.value);
+          s.fgSky = Number.isFinite(fgS) ? Math.max(0, Math.min(100, fgS)) : 52;
+          var fgC = Number(filterFgCool.value);
+          s.fgCool = Number.isFinite(fgC) ? Math.max(0, Math.min(100, fgC)) : 46;
         }
         if (type === "if_adventure") {
           s.ifPreset = readIfAdventurePresetFromDom();
@@ -6125,6 +6362,33 @@
           if (filterGrainTexture) filterGrainTexture.value = normalizeGrainTexture(s.grainTexture || def.grainTexture);
           filterGrainShadow.value = String(Math.max(0, Math.min(100, Math.round(Number(s.grainShadow) || def.grainShadow))));
           syncAnalogGrainParamLabels();
+        }
+        if (t === "fx_exposure_recovery") {
+          var erE2 = Number(s.erExp);
+          filterErExp.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(erE2) ? erE2 : def.erExp))));
+          var erS2 = Number(s.erShadow);
+          filterErShadow.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(erS2) ? erS2 : def.erShadow))));
+          var erH2 = Number(s.erHighlight);
+          filterErHighlight.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(erH2) ? erH2 : def.erHighlight))));
+          syncExposureRecoveryParamLabels();
+        }
+        if (t === "fx_temp_tint") {
+          var ctW2 = Number(s.ctWarmth);
+          filterCtWarmth.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(ctW2) ? ctW2 : def.ctWarmth))));
+          var ctT2 = Number(s.ctTint);
+          filterCtTint.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(ctT2) ? ctT2 : def.ctTint))));
+          var ctA2 = Number(s.ctAmount);
+          filterCtAmount.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(ctA2) ? ctA2 : def.ctAmount))));
+          syncTempTintParamLabels();
+        }
+        if (t === "fx_atmospheric_fog") {
+          var fgA2 = Number(s.fgAmount);
+          filterFgAmount.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgA2) ? fgA2 : def.fgAmount))));
+          var fgS2 = Number(s.fgSky);
+          filterFgSky.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgS2) ? fgS2 : def.fgSky))));
+          var fgC2 = Number(s.fgCool);
+          filterFgCool.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgC2) ? fgC2 : def.fgCool))));
+          syncAtmosphericFogParamLabels();
         }
         if (t === "if_adventure") {
           setIfAdventurePresetRadio(s.ifPreset || def.ifPreset);
@@ -6444,6 +6708,33 @@
         } else if (resetKey === "grainShadow" && t === "fx_analog_grain") {
           filterGrainShadow.value = String(def.grainShadow);
           syncAnalogGrainParamLabels();
+        } else if (resetKey === "erExp" && t === "fx_exposure_recovery") {
+          filterErExp.value = String(def.erExp);
+          syncExposureRecoveryParamLabels();
+        } else if (resetKey === "erShadow" && t === "fx_exposure_recovery") {
+          filterErShadow.value = String(def.erShadow);
+          syncExposureRecoveryParamLabels();
+        } else if (resetKey === "erHighlight" && t === "fx_exposure_recovery") {
+          filterErHighlight.value = String(def.erHighlight);
+          syncExposureRecoveryParamLabels();
+        } else if (resetKey === "ctWarmth" && t === "fx_temp_tint") {
+          filterCtWarmth.value = String(def.ctWarmth);
+          syncTempTintParamLabels();
+        } else if (resetKey === "ctTint" && t === "fx_temp_tint") {
+          filterCtTint.value = String(def.ctTint);
+          syncTempTintParamLabels();
+        } else if (resetKey === "ctAmount" && t === "fx_temp_tint") {
+          filterCtAmount.value = String(def.ctAmount);
+          syncTempTintParamLabels();
+        } else if (resetKey === "fgAmount" && t === "fx_atmospheric_fog") {
+          filterFgAmount.value = String(def.fgAmount);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgSky" && t === "fx_atmospheric_fog") {
+          filterFgSky.value = String(def.fgSky);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgCool" && t === "fx_atmospheric_fog") {
+          filterFgCool.value = String(def.fgCool);
+          syncAtmosphericFogParamLabels();
         } else {
           return;
         }
@@ -6541,6 +6832,9 @@
         )
           return t === "fx_bleach_bypass";
         if (key === "grainAmp" || key === "grainSize" || key === "grainColor" || key === "grainTexture" || key === "grainShadow") return t === "fx_analog_grain";
+        if (key === "erExp" || key === "erShadow" || key === "erHighlight") return t === "fx_exposure_recovery";
+        if (key === "ctWarmth" || key === "ctTint" || key === "ctAmount") return t === "fx_temp_tint";
+        if (key === "fgAmount" || key === "fgSky" || key === "fgCool") return t === "fx_atmospheric_fog";
         return false;
       }
 
@@ -6652,6 +6946,15 @@
           case "grainSize":
           case "grainColor":
           case "grainShadow":
+          case "erExp":
+          case "erShadow":
+          case "erHighlight":
+          case "ctWarmth":
+          case "ctTint":
+          case "ctAmount":
+          case "fgAmount":
+          case "fgSky":
+          case "fgCool":
             return ri(cur[key]) !== ri(def[key]);
           case "grainTexture":
             return normalizeGrainTexture(cur.grainTexture) !== normalizeGrainTexture(def.grainTexture);
@@ -6777,6 +7080,9 @@
         filterSoftGlowExtra.hidden = t !== "fx_soft_glow";
         filterBleachBypassExtra.hidden = t !== "fx_bleach_bypass";
         filterAnalogGrainExtra.hidden = t !== "fx_analog_grain";
+        filterExposureRecoveryExtra.hidden = t !== "fx_exposure_recovery";
+        filterTempTintExtra.hidden = t !== "fx_temp_tint";
+        filterAtmosFogExtra.hidden = t !== "fx_atmospheric_fog";
         filterVignetteExtra.hidden = t !== "vignette";
         filterIfAdventureExtra.hidden = t !== "if_adventure";
         var lastF = getOpLastParams(opKeyFilter(t));
@@ -6807,6 +7113,12 @@
           filterBleachDesat.focus();
         } else if (t === "fx_analog_grain") {
           filterGrainAmp.focus();
+        } else if (t === "fx_exposure_recovery") {
+          filterErExp.focus();
+        } else if (t === "fx_temp_tint") {
+          filterCtWarmth.focus();
+        } else if (t === "fx_atmospheric_fog") {
+          filterFgAmount.focus();
         } else if (t === "vignette") {
           filterVignetteCx.focus();
         } else if (t === "if_adventure") {
@@ -7299,6 +7611,150 @@
           let rr = r0 + mono + n1 * amp * cm * 1.08;
           let gg = g0 + mono + n2 * amp * cm * 1.08;
           let bb = b0 + mono + n3 * amp * cm * 1.08;
+          rr = Math.max(0, Math.min(255, rr));
+          gg = Math.max(0, Math.min(255, gg));
+          bb = Math.max(0, Math.min(255, bb));
+          d[i] = Math.max(0, Math.min(255, r0 * u + rr * blendT));
+          d[i + 1] = Math.max(0, Math.min(255, g0 * u + gg * blendT));
+          d[i + 2] = Math.max(0, Math.min(255, b0 * u + bb * blendT));
+        }
+      }
+
+      /**
+       * 曝光恢复：整体 EV、阴影抬起、高光柔化
+       * @param {Uint8ClampedArray} d
+       */
+      function filterExposureRecoveryMutate(d, w, h, blendT, opts) {
+        opts = opts || {};
+        blendT = Math.max(0, Math.min(1, blendT));
+        if (blendT <= 0) return;
+        const expPct = Math.max(0, Math.min(100, Number(opts.exp) != null ? Number(opts.exp) : 50));
+        const shadowPct = Math.max(0, Math.min(100, Number(opts.shadow) != null ? Number(opts.shadow) : 40));
+        const hiPct = Math.max(0, Math.min(100, Number(opts.highlight) != null ? Number(opts.highlight) : 36));
+        const ev = ((expPct - 50) / 50) * 0.55;
+        const mul = Math.pow(2, ev);
+        const shLift = (shadowPct / 100) * 34;
+        const hiPull = (hiPct / 100) * 0.62;
+        const work = ensureFilterScratchSingle(w, h);
+        work.data.set(d);
+        const s = work.data;
+        const u = 1 - blendT;
+        for (let i = 0; i < d.length; i += 4) {
+          const r0 = s[i];
+          const g0 = s[i + 1];
+          const b0 = s[i + 2];
+          let rr = Math.min(255, r0 * mul);
+          let gg = Math.min(255, g0 * mul);
+          let bb = Math.min(255, b0 * mul);
+          let Y = 0.2126 * rr + 0.7152 * gg + 0.0722 * bb;
+          const yN = Y / 255;
+          const add = shLift * Math.pow(Math.max(0, 1 - yN), 1.22);
+          rr += add;
+          gg += add * 0.99;
+          bb += add * 0.97;
+          rr = Math.max(0, Math.min(255, rr));
+          gg = Math.max(0, Math.min(255, gg));
+          bb = Math.max(0, Math.min(255, bb));
+          if (hiPull > 0.02) {
+            Y = (0.2126 * rr + 0.7152 * gg + 0.0722 * bb) / 255;
+            if (Y > 0.6) {
+              let t = (Y - 0.6) / 0.4;
+              if (t < 0) t = 0;
+              else if (t > 1) t = 1;
+              const hf = t * t * (3 - 2 * t);
+              const damp = 1 / (1 + hiPull * hf * 2.4);
+              rr *= damp;
+              gg *= damp;
+              bb *= damp;
+            }
+          }
+          rr = Math.max(0, Math.min(255, rr));
+          gg = Math.max(0, Math.min(255, gg));
+          bb = Math.max(0, Math.min(255, bb));
+          d[i] = Math.max(0, Math.min(255, r0 * u + rr * blendT));
+          d[i + 1] = Math.max(0, Math.min(255, g0 * u + gg * blendT));
+          d[i + 2] = Math.max(0, Math.min(255, b0 * u + bb * blendT));
+        }
+      }
+
+      /**
+       * 色温 / 绿品：白平衡式偏移（强度可调）
+       * @param {Uint8ClampedArray} d
+       */
+      function filterTempTintMutate(d, w, h, blendT, opts) {
+        opts = opts || {};
+        blendT = Math.max(0, Math.min(1, blendT));
+        if (blendT <= 0) return;
+        const warmthPct = Math.max(0, Math.min(100, Number(opts.warmth) != null ? Number(opts.warmth) : 50));
+        const tintPct = Math.max(0, Math.min(100, Number(opts.tint) != null ? Number(opts.tint) : 50));
+        const amountPct = Math.max(0, Math.min(100, Number(opts.amount) != null ? Number(opts.amount) : 58));
+        const am = amountPct / 100;
+        const warmK = ((warmthPct - 50) / 50) * 22 * am;
+        const work = ensureFilterScratchSingle(w, h);
+        work.data.set(d);
+        const s = work.data;
+        const u = 1 - blendT;
+        for (let i = 0; i < d.length; i += 4) {
+          const r0 = s[i];
+          const g0 = s[i + 1];
+          const b0 = s[i + 2];
+          let rr = r0 + warmK;
+          let gg = g0;
+          let bb = b0 - warmK * 0.92;
+          const tCenter = tintPct - 50;
+          if (tCenter >= 0) {
+            const m = (tCenter / 50) * am;
+            rr += m * 11;
+            gg -= m * 15;
+            bb += m * 9;
+          } else {
+            const g = (-tCenter / 50) * am;
+            gg += g * 13;
+            rr -= g * 6.5;
+            bb -= g * 4.5;
+          }
+          rr = Math.max(0, Math.min(255, rr));
+          gg = Math.max(0, Math.min(255, gg));
+          bb = Math.max(0, Math.min(255, bb));
+          d[i] = Math.max(0, Math.min(255, r0 * u + rr * blendT));
+          d[i + 1] = Math.max(0, Math.min(255, g0 * u + gg * blendT));
+          d[i + 2] = Math.max(0, Math.min(255, b0 * u + bb * blendT));
+        }
+      }
+
+      /**
+       * 薄雾纵深：与雾色混合，可按画面上方加重
+       * @param {Uint8ClampedArray} d
+       */
+      function filterAtmosphericFogMutate(d, w, h, blendT, opts) {
+        opts = opts || {};
+        blendT = Math.max(0, Math.min(1, blendT));
+        if (blendT <= 0) return;
+        const amountPct = Math.max(0, Math.min(100, Number(opts.amount) != null ? Number(opts.amount) : 34));
+        const skyPct = Math.max(0, Math.min(100, Number(opts.sky) != null ? Number(opts.sky) : 52));
+        const coolPct = Math.max(0, Math.min(100, Number(opts.cool) != null ? Number(opts.cool) : 46));
+        const amt0 = (amountPct / 100) * 0.82;
+        const skyK = skyPct / 100;
+        const cool = coolPct / 100;
+        const fr = 210 + (1 - cool) * 28;
+        const fgc = 218 - cool * 14;
+        const fb = 228 + cool * 22;
+        const invHm = 1 / Math.max(1, h - 1);
+        const work = ensureFilterScratchSingle(w, h);
+        work.data.set(d);
+        const s = work.data;
+        const u = 1 - blendT;
+        for (let i = 0; i < d.length; i += 4) {
+          const p = i >> 2;
+          const y = ((p / w) | 0) * invHm;
+          const skyGrad = y;
+          const fogMix = amt0 * (0.28 + 0.72 * skyK * (0.12 + 0.88 * skyGrad));
+          const r0 = s[i];
+          const g0 = s[i + 1];
+          const b0 = s[i + 2];
+          let rr = r0 * (1 - fogMix) + fr * fogMix;
+          let gg = g0 * (1 - fogMix) + fgc * fogMix;
+          let bb = b0 * (1 - fogMix) + fb * fogMix;
           rr = Math.max(0, Math.min(255, rr));
           gg = Math.max(0, Math.min(255, gg));
           bb = Math.max(0, Math.min(255, bb));
@@ -8732,6 +9188,27 @@
       filterGrainColor.addEventListener("input", onAnalogGrainControlInput);
       filterGrainShadow.addEventListener("input", onAnalogGrainControlInput);
       if (filterGrainTexture) filterGrainTexture.addEventListener("change", onAnalogGrainControlInput);
+      function onExposureRecoveryControlInput() {
+        syncExposureRecoveryParamLabels();
+        scheduleFilterPreview();
+      }
+      filterErExp.addEventListener("input", onExposureRecoveryControlInput);
+      filterErShadow.addEventListener("input", onExposureRecoveryControlInput);
+      filterErHighlight.addEventListener("input", onExposureRecoveryControlInput);
+      function onTempTintControlInput() {
+        syncTempTintParamLabels();
+        scheduleFilterPreview();
+      }
+      filterCtWarmth.addEventListener("input", onTempTintControlInput);
+      filterCtTint.addEventListener("input", onTempTintControlInput);
+      filterCtAmount.addEventListener("input", onTempTintControlInput);
+      function onAtmosphericFogControlInput() {
+        syncAtmosphericFogParamLabels();
+        scheduleFilterPreview();
+      }
+      filterFgAmount.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgSky.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgCool.addEventListener("input", onAtmosphericFogControlInput);
       function onVignetteControlInput() {
         syncVignetteParamLabels();
         scheduleFilterPreview();
