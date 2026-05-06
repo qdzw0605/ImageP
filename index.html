@@ -2295,33 +2295,73 @@
           先整体曝光，再按亮度垫阴影、压高光；适合逆光与欠曝片。强度为与原图混合。
         </p>
       </div>
-      <div id="filterTempTintExtra" class="modal-field" hidden>
+      <div id="filterUnderwaterExtra" class="modal-field" hidden>
         <div class="modal-value-row" style="margin-top: 0">
           <span class="param-label-line">
-            <span>色温</span>
-            <button type="button" class="param-default-dot" data-reset-key="ctWarmth" hidden aria-label="恢复默认"></button>
+            <span>光程吸收</span>
+            <button type="button" class="param-default-dot" data-reset-key="uwPath" hidden aria-label="恢复默认"></button>
           </span>
-          <strong id="filterCtWarmthVal">中性</strong>
+          <strong id="filterUwPathVal">48%</strong>
         </div>
-        <input type="range" id="filterCtWarmth" min="0" max="100" value="50" step="1" aria-label="偏冷偏蓝绿、偏暖偏红黄" />
+        <input type="range" id="filterUwPath" min="0" max="100" value="48" step="1" aria-label="Beer–Lambert：蓝绿保留、红端更快衰减；随等效水深增强" />
         <div class="modal-value-row" style="margin-top: 0.45rem">
           <span class="param-label-line">
-            <span>绿品（洋红）</span>
-            <button type="button" class="param-default-dot" data-reset-key="ctTint" hidden aria-label="恢复默认"></button>
+            <span>体积散射</span>
+            <button type="button" class="param-default-dot" data-reset-key="uwScatter" hidden aria-label="恢复默认"></button>
           </span>
-          <strong id="filterCtTintVal">中性</strong>
+          <strong id="filterUwScatterVal">52%</strong>
         </div>
-        <input type="range" id="filterCtTint" min="0" max="100" value="50" step="1" aria-label="偏绿 / 偏洋红，常见白平衡微调" />
+        <input type="range" id="filterUwScatter" min="0" max="100" value="52" step="1" aria-label="单次散射近似：向浑水底色提亮发灰，远景更重" />
         <div class="modal-value-row" style="margin-top: 0.45rem">
           <span class="param-label-line">
-            <span>校正强度</span>
-            <button type="button" class="param-default-dot" data-reset-key="ctAmount" hidden aria-label="恢复默认"></button>
+            <span>浑浊微粒</span>
+            <button type="button" class="param-default-dot" data-reset-key="uwTurbid" hidden aria-label="恢复默认"></button>
           </span>
-          <strong id="filterCtAmountVal">58%</strong>
+          <strong id="filterUwTurbidVal">38%</strong>
         </div>
-        <input type="range" id="filterCtAmount" min="0" max="100" value="58" step="1" aria-label="色温绿品作用在像素上的幅度（再乘弹窗强度）" />
+        <input type="range" id="filterUwTurbid" min="0" max="100" value="38" step="1" aria-label="悬浮质增多：吸收系数整体抬高、焦散被抹平、微粒闪烁略增" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>光谱色相</span>
+            <button type="button" class="param-default-dot" data-reset-key="uwHue" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterUwHueVal">54%</strong>
+        </div>
+        <input type="range" id="filterUwHue" min="0" max="100" value="54" step="1" aria-label="水体主色在青绿之间摆动（散射底色 + 色差微调）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>日光焦散</span>
+            <button type="button" class="param-default-dot" data-reset-key="uwCaustics" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterUwCausticsVal">42%</strong>
+        </div>
+        <input type="range" id="filterUwCaustics" min="0" max="100" value="42" step="1" aria-label="水面波纹聚焦的静态焦散花纹（亮纹偏青绿）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>焦散尺度</span>
+            <button type="button" class="param-default-dot" data-reset-key="uwCausScale" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterUwCausScaleVal">48%</strong>
+        </div>
+        <input type="range" id="filterUwCausScale" min="10" max="100" value="48" step="1" aria-label="焦散条纹粗细：小值更细碎，大值更舒展" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>光源水平</span>
+            <button type="button" class="param-default-dot" data-reset-key="uwLightX" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterUwLightXVal">52%</strong>
+        </div>
+        <input type="range" id="filterUwLightX" min="0" max="100" value="52" step="1" aria-label="水面日光投影中心左右位置（0 左、100 右）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>光源高低</span>
+            <button type="button" class="param-default-dot" data-reset-key="uwLightY" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterUwLightYVal">28%</strong>
+        </div>
+        <input type="range" id="filterUwLightY" min="0" max="100" value="28" step="1" aria-label="日光斑纵向位置（0 靠上缘常作远处水面）" />
         <p class="anchor-hint" style="margin: 0.35rem 0 0; font-size: 0.78rem">
-          类似相机白平衡：冷暖与绿/洋红轴，强度可控。强度为与原图混合。
+          单通道近似：指数吸收 + 浑水单次散射 + 微粒与静态焦散；非离线流体或路径追踪，但在交互速度下尽量贴近水下光学。强度为与原图混合。
         </p>
       </div>
       <div id="filterAtmosFogExtra" class="modal-field" hidden>
@@ -2348,9 +2388,251 @@
           </span>
           <strong id="filterFgCoolVal">46%</strong>
         </div>
-        <input type="range" id="filterFgCool" min="0" max="100" value="46" step="1" aria-label="雾偏冷蓝或偏中性灰" />
+        <input type="range" id="filterFgCool" min="0" max="100" value="46" step="1" aria-label="雾偏冷蓝或偏中性灰（基底）；可与下方雾色细调叠加" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>雾色色相</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgFogHue" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgFogHueVal">中性</strong>
+        </div>
+        <input type="range" id="filterFgFogHue" min="0" max="100" value="50" step="1" aria-label="偏暖如沙尘日落霾，偏冷如阴雨远山灰蓝" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>雾色绿品</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgFogTint" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgFogTintVal">中性</strong>
+        </div>
+        <input type="range" id="filterFgFogTint" min="0" max="100" value="50" step="1" aria-label="植被湿气偏绿雾；城市烟尘可略偏洋红灰" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>雾色明暗</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgFogBright" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgFogBrightVal">50%</strong>
+        </div>
+        <input type="range" id="filterFgFogBright" min="0" max="100" value="50" step="1" aria-label="雾本色亮度：低了像浓霾，高了像薄霭透光" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>雾色饱和</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgFogSat" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgFogSatVal">中性</strong>
+        </div>
+        <input type="range" id="filterFgFogSat" min="0" max="100" value="50" step="1" aria-label="低了接近中性灰雾，高了保留青蓝或暖霾色味" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>雾层高度</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgHorizon" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgHorizonVal">24%</strong>
+        </div>
+        <input type="range" id="filterFgHorizon" min="0" max="100" value="24" step="1" aria-label="雾最浓的纵向位置：0 靠上缘、100 靠下缘（模拟地平线一带更远）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>纵向延展</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgSpread" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgSpreadVal">44%</strong>
+        </div>
+        <input type="range" id="filterFgSpread" min="2" max="92" value="44" step="1" aria-label="雾带粗细：极小更锐利，大值更厚更匀" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>絮状不均</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgWisp" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgWispVal">34%</strong>
+        </div>
+        <input type="range" id="filterFgWisp" min="0" max="100" value="34" step="1" aria-label="低频次噪声模拟雾气疏密，0 完全均匀" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>近景透亮</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgNearClear" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgNearClearVal">28%</strong>
+        </div>
+        <input type="range" id="filterFgNearClear" min="0" max="100" value="28" step="1" aria-label="压低画面下方的雾，前景更清晰（纵深更真实）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>经典梯度</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgClassic" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgClassicVal">40%</strong>
+        </div>
+        <input type="range" id="filterFgClassic" min="0" max="100" value="40" step="1" aria-label="混入早期纵向平滑雾（自下缘加重）；拉高可找回旧版观感，拉低偏新高斯雾带" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>均匀铺底</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgUniform" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgUniformVal">14%</strong>
+        </div>
+        <input type="range" id="filterFgUniform" min="0" max="100" value="14" step="1" aria-label="整幅画面保底雾量，弱化「只雾一条带」的感觉" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>浓度上限</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgCap" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgCapVal">90%</strong>
+        </div>
+        <input type="range" id="filterFgCap" min="42" max="100" value="90" step="1" aria-label="雾与原图混合的最大比例；强力时可顶满，保守时压低防灰死" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>纵深曲线</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgCurve" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgCurveVal">中性</strong>
+        </div>
+        <input type="range" id="filterFgCurve" min="0" max="100" value="50" step="1" aria-label="低值过渡更柔和铺满，高值雾缘更利落、中间更浓" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>横向飘移</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgHoriz" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgHorizVal">22%</strong>
+        </div>
+        <input type="range" id="filterFgHoriz" min="0" max="100" value="22" step="1" aria-label="左右雾量微调，模拟侧风或不均匀气团" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>高光透气</span>
+            <button type="button" class="param-default-dot" data-reset-key="fgHiClear" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterFgHiClearVal">0%</strong>
+        </div>
+        <input type="range" id="filterFgHiClear" min="0" max="100" value="0" step="1" aria-label="亮部减弱雾，保留天光与高光层次" />
         <p class="anchor-hint" style="margin: 0.35rem 0 0; font-size: 0.78rem">
-          空气透视 / 薄雾：可做出远山、阴天或梦境感。强度为与原图混合。
+          冷色雾定基底，雾色四向细调冷暖霾与灰蓝雾；再配上雾带、经典梯度、铺底与高光透气等分布控制。强度为与原图混合。
+        </p>
+      </div>
+      <div id="filterVividEdgeExtra" class="modal-field" hidden>
+        <div class="modal-value-row" style="margin-top: 0">
+          <span class="param-label-line">
+            <span>边缘灵敏度</span>
+            <button type="button" class="param-default-dot" data-reset-key="veExtract" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterVeExtractVal">54%</strong>
+        </div>
+        <input type="range" id="filterVeExtract" min="0" max="100" value="54" step="1" aria-label="亮度 Sobel 响应：越高越容易整条轮廓显色" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>线宽膨胀</span>
+            <button type="button" class="param-default-dot" data-reset-key="veSpread" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterVeSpreadVal">36%</strong>
+        </div>
+        <input type="range" id="filterVeSpread" min="0" max="100" value="36" step="1" aria-label="边缘掩膜膨胀，粗描边更接近海报勾线" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>轮廓撞色</span>
+            <button type="button" class="param-default-dot" data-reset-key="veInk" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterVeInkVal">72%</strong>
+        </div>
+        <input type="range" id="filterVeInk" min="0" max="100" value="72" step="1" aria-label="轮廓纯色与填色的混合：越高边缘越抢眼" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>色相层数</span>
+            <button type="button" class="param-default-dot" data-reset-key="veHueBands" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterVeHueBandsVal">7</strong>
+        </div>
+        <input type="range" id="filterVeHueBands" min="4" max="14" value="7" step="1" aria-label="色相离散档数，越少块面越大、撞色越大胆" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>明暗层数</span>
+            <button type="button" class="param-default-dot" data-reset-key="veValBands" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterVeValBandsVal">4</strong>
+        </div>
+        <input type="range" id="filterVeValBands" min="2" max="8" value="4" step="1" aria-label="明度分层，类似套色版画" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>饱和推力</span>
+            <button type="button" class="param-default-dot" data-reset-key="veSat" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterVeSatVal">80%</strong>
+        </div>
+        <input type="range" id="filterVeSat" min="0" max="100" value="80" step="1" aria-label="填色区饱和度抬高，纯色感更强" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>轮廓色相偏置</span>
+            <button type="button" class="param-default-dot" data-reset-key="veEdgeHue" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterVeEdgeHueVal">56%</strong>
+        </div>
+        <input type="range" id="filterVeEdgeHue" min="0" max="100" value="56" step="1" aria-label="轮廓相对填色在色相环上错开，强化撞色描边" />
+        <p class="anchor-hint" style="margin: 0.35rem 0 0; font-size: 0.78rem">
+          亮度梯度提边缘 + HSV 分层量化填色；轮廓再套一层色相偏移的高纯色。强度为与原图混合。
+        </p>
+      </div>
+      <div id="filterHeatHazeExtra" class="modal-field" hidden>
+        <div class="modal-value-row" style="margin-top: 0">
+          <span class="param-label-line">
+            <span>湍流幅度</span>
+            <button type="button" class="param-default-dot" data-reset-key="hhAmp" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterHhAmpVal">38%</strong>
+        </div>
+        <input type="range" id="filterHhAmp" min="0" max="100" value="38" step="1" aria-label="折射率扰动导致的像素位移强度（热浪幅度）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>湍流尺度</span>
+            <button type="button" class="param-default-dot" data-reset-key="hhScale" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterHhScaleVal">46%</strong>
+        </div>
+        <input type="range" id="filterHhScale" min="0" max="100" value="46" step="1" aria-label="Schlieren 风格的相干尺度（空间频率）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>地面热源</span>
+            <button type="button" class="param-default-dot" data-reset-key="hhGround" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterHhGroundVal">52%</strong>
+        </div>
+        <input type="range" id="filterHhGround" min="0" max="100" value="52" step="1" aria-label="纵向密度梯度偏置（路面蜃景、竖向抖动不对称）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>色散折射</span>
+            <button type="button" class="param-default-dot" data-reset-key="hhChr" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterHhChrVal">18%</strong>
+        </div>
+        <input type="range" id="filterHhChr" min="0" max="100" value="18" step="1" aria-label="位移路径上的微小波长分离" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>侧向风偏</span>
+            <button type="button" class="param-default-dot" data-reset-key="hhWind" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterHhWindVal">50%</strong>
+        </div>
+        <input type="range" id="filterHhWind" min="0" max="100" value="50" step="1" aria-label="水平对流漂移叠加（50 为对称）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>细纹叠加</span>
+            <button type="button" class="param-default-dot" data-reset-key="hhFine" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterHhFineVal">32%</strong>
+        </div>
+        <input type="range" id="filterHhFine" min="0" max="100" value="32" step="1" aria-label="第二大尺度湍流分量（更高空间频率）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>取样朦胧</span>
+            <button type="button" class="param-default-dot" data-reset-key="hhBlur" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterHhBlurVal">14%</strong>
+        </div>
+        <input type="range" id="filterHhBlur" min="0" max="100" value="14" step="1" aria-label="折射前先轻微模糊取样（空气散射朦胧感）" />
+        <div class="modal-value-row" style="margin-top: 0.45rem">
+          <span class="param-label-line">
+            <span>细节钉住</span>
+            <button type="button" class="param-default-dot" data-reset-key="hhRetain" hidden aria-label="恢复默认"></button>
+          </span>
+          <strong id="filterHhRetainVal">24%</strong>
+        </div>
+        <input type="range" id="filterHhRetain" min="0" max="100" value="24" step="1" aria-label="扭曲结果与原图混合，减轻拖影糊死细节" />
+        <p class="anchor-hint" style="margin: 0.35rem 0 0; font-size: 0.78rem">
+          非均匀温度场 → 折射率波纹；可调尺度、风向偏置、细纹、取样朦胧与细节保留。强度为与原图混合。
         </p>
       </div>
       <div class="modal-actions">
@@ -2408,8 +2690,10 @@
                   <button type="button" class="secondary js-filter-open" data-filter="fx_bleach_bypass" disabled title="漂白旁路：去饱和、对比、冷暖、暗部抬起、高光压实、残留色彩；强度为与原图混合">漂白旁路…</button>
                   <button type="button" class="secondary js-filter-open" data-filter="fx_analog_grain" disabled title="胶片颗粒：强度、粗细、彩色、纹理类型、阴影加重；强度为与原图混合">胶片颗粒…</button>
                   <button type="button" class="secondary js-filter-open" data-filter="fx_exposure_recovery" disabled title="曝光、阴影抬起、高光回收；强度为与原图混合">曝光恢复…</button>
-                  <button type="button" class="secondary js-filter-open" data-filter="fx_temp_tint" disabled title="色温与绿/洋红（白平衡式）；强度为与原图混合">色温绿品…</button>
-                  <button type="button" class="secondary js-filter-open" data-filter="fx_atmospheric_fog" disabled title="薄雾纵深：浓度、天空偏重、冷色雾；强度为与原图混合">薄雾纵深…</button>
+                  <button type="button" class="secondary js-filter-open" data-filter="fx_underwater" disabled title="物理近似：光程吸收、体积散射、浑浊、光谱与可调日光焦散；强度为与原图混合">水下光学…</button>
+                  <button type="button" class="secondary js-filter-open" data-filter="fx_atmospheric_fog" disabled title="纵深雾：冷暖基底 + 雾色色相/绿品/明暗/饱和；浓度、天空、雾带、经典梯度、铺底、上限、曲线、横向、高光透气、延展、絮状、近景；强度为与原图混合">薄雾纵深…</button>
+                  <button type="button" class="secondary js-filter-open" data-filter="fx_vivid_edge" disabled title="提取边缘 + 高饱和分层填色 + 轮廓撞色描边；强度为与原图混合">边缘撞色…</button>
+                  <button type="button" class="secondary js-filter-open" data-filter="fx_heat_haze" disabled title="热浪蜃景：湍流位移、风向/细纹/朦胧取样与细节保留等可调；强度为与原图混合">热浪蜃景…</button>
                   <button type="button" class="secondary js-filter-open" data-filter="halftone" disabled title="调幅网点：单元格、角度、纸墨色等可调">印刷网点…</button>
                   <button type="button" class="secondary js-filter-open aside-span-2" data-filter="if_adventure" disabled title="parser / MUD 向画面预设：终端、卷轴、光照、气氛等多种子风格">IF 文字冒险…</button>
                 </div>
@@ -2705,13 +2989,23 @@
       const filterErShadowVal = document.getElementById("filterErShadowVal");
       const filterErHighlight = document.getElementById("filterErHighlight");
       const filterErHighlightVal = document.getElementById("filterErHighlightVal");
-      const filterTempTintExtra = document.getElementById("filterTempTintExtra");
-      const filterCtWarmth = document.getElementById("filterCtWarmth");
-      const filterCtWarmthVal = document.getElementById("filterCtWarmthVal");
-      const filterCtTint = document.getElementById("filterCtTint");
-      const filterCtTintVal = document.getElementById("filterCtTintVal");
-      const filterCtAmount = document.getElementById("filterCtAmount");
-      const filterCtAmountVal = document.getElementById("filterCtAmountVal");
+      const filterUnderwaterExtra = document.getElementById("filterUnderwaterExtra");
+      const filterUwPath = document.getElementById("filterUwPath");
+      const filterUwPathVal = document.getElementById("filterUwPathVal");
+      const filterUwScatter = document.getElementById("filterUwScatter");
+      const filterUwScatterVal = document.getElementById("filterUwScatterVal");
+      const filterUwTurbid = document.getElementById("filterUwTurbid");
+      const filterUwTurbidVal = document.getElementById("filterUwTurbidVal");
+      const filterUwHue = document.getElementById("filterUwHue");
+      const filterUwHueVal = document.getElementById("filterUwHueVal");
+      const filterUwCaustics = document.getElementById("filterUwCaustics");
+      const filterUwCausticsVal = document.getElementById("filterUwCausticsVal");
+      const filterUwCausScale = document.getElementById("filterUwCausScale");
+      const filterUwCausScaleVal = document.getElementById("filterUwCausScaleVal");
+      const filterUwLightX = document.getElementById("filterUwLightX");
+      const filterUwLightXVal = document.getElementById("filterUwLightXVal");
+      const filterUwLightY = document.getElementById("filterUwLightY");
+      const filterUwLightYVal = document.getElementById("filterUwLightYVal");
       const filterAtmosFogExtra = document.getElementById("filterAtmosFogExtra");
       const filterFgAmount = document.getElementById("filterFgAmount");
       const filterFgAmountVal = document.getElementById("filterFgAmountVal");
@@ -2719,6 +3013,66 @@
       const filterFgSkyVal = document.getElementById("filterFgSkyVal");
       const filterFgCool = document.getElementById("filterFgCool");
       const filterFgCoolVal = document.getElementById("filterFgCoolVal");
+      const filterFgFogHue = document.getElementById("filterFgFogHue");
+      const filterFgFogHueVal = document.getElementById("filterFgFogHueVal");
+      const filterFgFogTint = document.getElementById("filterFgFogTint");
+      const filterFgFogTintVal = document.getElementById("filterFgFogTintVal");
+      const filterFgFogBright = document.getElementById("filterFgFogBright");
+      const filterFgFogBrightVal = document.getElementById("filterFgFogBrightVal");
+      const filterFgFogSat = document.getElementById("filterFgFogSat");
+      const filterFgFogSatVal = document.getElementById("filterFgFogSatVal");
+      const filterFgHorizon = document.getElementById("filterFgHorizon");
+      const filterFgHorizonVal = document.getElementById("filterFgHorizonVal");
+      const filterFgSpread = document.getElementById("filterFgSpread");
+      const filterFgSpreadVal = document.getElementById("filterFgSpreadVal");
+      const filterFgWisp = document.getElementById("filterFgWisp");
+      const filterFgWispVal = document.getElementById("filterFgWispVal");
+      const filterFgNearClear = document.getElementById("filterFgNearClear");
+      const filterFgNearClearVal = document.getElementById("filterFgNearClearVal");
+      const filterFgClassic = document.getElementById("filterFgClassic");
+      const filterFgClassicVal = document.getElementById("filterFgClassicVal");
+      const filterFgUniform = document.getElementById("filterFgUniform");
+      const filterFgUniformVal = document.getElementById("filterFgUniformVal");
+      const filterFgCap = document.getElementById("filterFgCap");
+      const filterFgCapVal = document.getElementById("filterFgCapVal");
+      const filterFgCurve = document.getElementById("filterFgCurve");
+      const filterFgCurveVal = document.getElementById("filterFgCurveVal");
+      const filterFgHoriz = document.getElementById("filterFgHoriz");
+      const filterFgHorizVal = document.getElementById("filterFgHorizVal");
+      const filterFgHiClear = document.getElementById("filterFgHiClear");
+      const filterFgHiClearVal = document.getElementById("filterFgHiClearVal");
+      const filterVividEdgeExtra = document.getElementById("filterVividEdgeExtra");
+      const filterVeExtract = document.getElementById("filterVeExtract");
+      const filterVeExtractVal = document.getElementById("filterVeExtractVal");
+      const filterVeSpread = document.getElementById("filterVeSpread");
+      const filterVeSpreadVal = document.getElementById("filterVeSpreadVal");
+      const filterVeInk = document.getElementById("filterVeInk");
+      const filterVeInkVal = document.getElementById("filterVeInkVal");
+      const filterVeHueBands = document.getElementById("filterVeHueBands");
+      const filterVeHueBandsVal = document.getElementById("filterVeHueBandsVal");
+      const filterVeValBands = document.getElementById("filterVeValBands");
+      const filterVeValBandsVal = document.getElementById("filterVeValBandsVal");
+      const filterVeSat = document.getElementById("filterVeSat");
+      const filterVeSatVal = document.getElementById("filterVeSatVal");
+      const filterVeEdgeHue = document.getElementById("filterVeEdgeHue");
+      const filterVeEdgeHueVal = document.getElementById("filterVeEdgeHueVal");
+      const filterHeatHazeExtra = document.getElementById("filterHeatHazeExtra");
+      const filterHhAmp = document.getElementById("filterHhAmp");
+      const filterHhAmpVal = document.getElementById("filterHhAmpVal");
+      const filterHhScale = document.getElementById("filterHhScale");
+      const filterHhScaleVal = document.getElementById("filterHhScaleVal");
+      const filterHhGround = document.getElementById("filterHhGround");
+      const filterHhGroundVal = document.getElementById("filterHhGroundVal");
+      const filterHhChr = document.getElementById("filterHhChr");
+      const filterHhChrVal = document.getElementById("filterHhChrVal");
+      const filterHhWind = document.getElementById("filterHhWind");
+      const filterHhWindVal = document.getElementById("filterHhWindVal");
+      const filterHhFine = document.getElementById("filterHhFine");
+      const filterHhFineVal = document.getElementById("filterHhFineVal");
+      const filterHhBlur = document.getElementById("filterHhBlur");
+      const filterHhBlurVal = document.getElementById("filterHhBlurVal");
+      const filterHhRetain = document.getElementById("filterHhRetain");
+      const filterHhRetainVal = document.getElementById("filterHhRetainVal");
       const filterIfAdventureExtra = document.getElementById("filterIfAdventureExtra");
       const filterIfAdventurePresetList = document.getElementById("filterIfAdventurePresetList");
       /** @type {HTMLElement|null} */
@@ -5180,12 +5534,18 @@
         } else if (name === "fx_exposure_recovery") {
           t = Math.max(0, Math.min(1, t));
           filterExposureRecoveryMutate(d, w, h, t, filterAdjustOpts.exposureRecovery || {});
-        } else if (name === "fx_temp_tint") {
+        } else if (name === "fx_underwater") {
           t = Math.max(0, Math.min(1, t));
-          filterTempTintMutate(d, w, h, t, filterAdjustOpts.tempTint || {});
+          filterUnderwaterMutate(d, w, h, t, filterAdjustOpts.underwater || {});
         } else if (name === "fx_atmospheric_fog") {
           t = Math.max(0, Math.min(1, t));
           filterAtmosphericFogMutate(d, w, h, t, filterAdjustOpts.atmosphericFog || {});
+        } else if (name === "fx_vivid_edge") {
+          t = Math.max(0, Math.min(1, t));
+          filterVividEdgeCollideMutate(d, w, h, t, filterAdjustOpts.vividEdge || {});
+        } else if (name === "fx_heat_haze") {
+          t = Math.max(0, Math.min(1, t));
+          filterHeatHazeMutate(d, w, h, t, filterAdjustOpts.heatHaze || {});
         } else if (name === "frosted") {
           filterFrostedMutate(d, w, h, frostedOpts || {});
         } else {
@@ -5433,8 +5793,10 @@
         fx_bleach_bypass: "漂白旁路",
         fx_analog_grain: "胶片颗粒",
         fx_exposure_recovery: "曝光恢复",
-        fx_temp_tint: "色温绿品",
+        fx_underwater: "水下光学",
         fx_atmospheric_fog: "薄雾纵深",
+        fx_vivid_edge: "边缘撞色",
+        fx_heat_haze: "热浪蜃景",
         halftone: "印刷网点",
         if_adventure: "IF 文字冒险",
       };
@@ -5460,8 +5822,14 @@
         fx_analog_grain:
           "胶片颗粒（平滑/块状/细点纹理 + 阴影加重；强度上限提高；强度为与原图混合）",
         fx_exposure_recovery: "曝光恢复（整体曝光 EV、阴影抬起、高光回收；强度为与原图混合）",
-        fx_temp_tint: "色温绿品（冷暖 + 绿/洋红轴 + 校正强度；强度为与原图混合）",
-        fx_atmospheric_fog: "薄雾纵深（雾浓度、画面上方偏重、冷色雾；强度为与原图混合）",
+        fx_underwater:
+          "水下光学（Beer–Lambert 吸收、单次体积散射、浑浊与微粒、光谱色相、可调日光位置与焦散尺度；强度为与原图混合）",
+        fx_atmospheric_fog:
+          "薄雾纵深（雾色：冷暖基底 + 色相/绿品/明暗/饱和；分布与浓度：雾带、经典梯度、铺底、上限、曲线、横向、高光透气、天空、延展、絮状、近景；强度为与原图混合）",
+        fx_vivid_edge:
+          "边缘撞色（亮度 Sobel 提边 + 膨胀线宽；HSV 色相/明度分层纯色填色；轮廓色相偏移撞色描边；强度为与原图混合）",
+        fx_heat_haze:
+          "热浪蜃景（湍流位移 + 侧向风偏、细纹叠加、取样朦胧、细节钉住、色散等；强度为与原图混合）",
         halftone:
           "印刷网点（调幅网屏：单元格、角度、墨点扩张、阶调、网格位移、形状、取样与纸墨色；强度为与原图混合）",
         if_adventure: "IF 文字冒险（选画面预设，再调强度；适合 parser / MUD 配图）",
@@ -5762,37 +6130,74 @@
         filterErHighlightVal.textContent = filterErHighlight.value + "%";
       }
 
-      function readTempTintOptionsFromDom() {
-        var w = Number(filterCtWarmth.value);
-        var t = Number(filterCtTint.value);
-        var a = Number(filterCtAmount.value);
+      function readUnderwaterOptionsFromDom() {
+        var p = Number(filterUwPath.value);
+        var sc = Number(filterUwScatter.value);
+        var tb = Number(filterUwTurbid.value);
+        var hu = Number(filterUwHue.value);
+        var ca = Number(filterUwCaustics.value);
+        var cs = Number(filterUwCausScale.value);
+        var lx = Number(filterUwLightX.value);
+        var ly = Number(filterUwLightY.value);
         return {
-          warmth: Number.isFinite(w) ? Math.max(0, Math.min(100, w)) : 50,
-          tint: Number.isFinite(t) ? Math.max(0, Math.min(100, t)) : 50,
-          amount: Number.isFinite(a) ? Math.max(0, Math.min(100, a)) : 58,
+          path: Number.isFinite(p) ? Math.max(0, Math.min(100, p)) : 48,
+          scatter: Number.isFinite(sc) ? Math.max(0, Math.min(100, sc)) : 52,
+          turbid: Number.isFinite(tb) ? Math.max(0, Math.min(100, tb)) : 38,
+          hue: Number.isFinite(hu) ? Math.max(0, Math.min(100, hu)) : 54,
+          caustics: Number.isFinite(ca) ? Math.max(0, Math.min(100, ca)) : 42,
+          causScale: Number.isFinite(cs) ? Math.max(10, Math.min(100, cs)) : 48,
+          lightX: Number.isFinite(lx) ? Math.max(0, Math.min(100, lx)) : 52,
+          lightY: Number.isFinite(ly) ? Math.max(0, Math.min(100, ly)) : 28,
         };
       }
 
-      function syncTempTintParamLabels() {
-        var cw = Math.round(Number(filterCtWarmth.value) || 50);
-        if (cw === 50) filterCtWarmthVal.textContent = "中性";
-        else if (cw > 50) filterCtWarmthVal.textContent = "偏暖 " + (cw - 50);
-        else filterCtWarmthVal.textContent = "偏冷 " + (50 - cw);
-        var ct = Math.round(Number(filterCtTint.value) || 50);
-        if (ct === 50) filterCtTintVal.textContent = "中性";
-        else if (ct > 50) filterCtTintVal.textContent = "偏洋红 " + (ct - 50);
-        else filterCtTintVal.textContent = "偏绿 " + (50 - ct);
-        filterCtAmountVal.textContent = filterCtAmount.value + "%";
+      function syncUnderwaterParamLabels() {
+        filterUwPathVal.textContent = filterUwPath.value + "%";
+        filterUwScatterVal.textContent = filterUwScatter.value + "%";
+        filterUwTurbidVal.textContent = filterUwTurbid.value + "%";
+        filterUwHueVal.textContent = filterUwHue.value + "%";
+        filterUwCausticsVal.textContent = filterUwCaustics.value + "%";
+        filterUwCausScaleVal.textContent = filterUwCausScale.value + "%";
+        filterUwLightXVal.textContent = filterUwLightX.value + "%";
+        filterUwLightYVal.textContent = filterUwLightY.value + "%";
       }
 
       function readAtmosphericFogOptionsFromDom() {
         var am = Number(filterFgAmount.value);
         var sk = Number(filterFgSky.value);
         var cl = Number(filterFgCool.value);
+        var fh = Number(filterFgFogHue.value);
+        var ft = Number(filterFgFogTint.value);
+        var fbri = Number(filterFgFogBright.value);
+        var fsat = Number(filterFgFogSat.value);
+        var hz = Number(filterFgHorizon.value);
+        var sp = Number(filterFgSpread.value);
+        var wi = Number(filterFgWisp.value);
+        var nc = Number(filterFgNearClear.value);
+        var clsc = Number(filterFgClassic.value);
+        var unif = Number(filterFgUniform.value);
+        var cap = Number(filterFgCap.value);
+        var crv = Number(filterFgCurve.value);
+        var hzf = Number(filterFgHoriz.value);
+        var hic = Number(filterFgHiClear.value);
         return {
           amount: Number.isFinite(am) ? Math.max(0, Math.min(100, am)) : 34,
           sky: Number.isFinite(sk) ? Math.max(0, Math.min(100, sk)) : 52,
           cool: Number.isFinite(cl) ? Math.max(0, Math.min(100, cl)) : 46,
+          fogHue: Number.isFinite(fh) ? Math.max(0, Math.min(100, fh)) : 50,
+          fogTint: Number.isFinite(ft) ? Math.max(0, Math.min(100, ft)) : 50,
+          fogBright: Number.isFinite(fbri) ? Math.max(0, Math.min(100, fbri)) : 50,
+          fogSat: Number.isFinite(fsat) ? Math.max(0, Math.min(100, fsat)) : 50,
+          horizon: Number.isFinite(hz) ? Math.max(0, Math.min(100, hz)) : 24,
+          spread: Number.isFinite(sp) ? Math.max(2, Math.min(92, sp)) : 44,
+          wisp: Number.isFinite(wi) ? Math.max(0, Math.min(100, wi)) : 34,
+          nearClear: Number.isFinite(nc) ? Math.max(0, Math.min(100, nc)) : 28,
+          classic: Number.isFinite(clsc) ? Math.max(0, Math.min(100, clsc)) : 40,
+          uniform: Number.isFinite(unif) ? Math.max(0, Math.min(100, unif)) : 14,
+          cap: Number.isFinite(cap) ? Math.max(42, Math.min(100, cap)) : 90,
+          curve: Number.isFinite(crv) ? Math.max(0, Math.min(100, crv)) : 50,
+          horiz: Number.isFinite(hzf) ? Math.max(0, Math.min(100, hzf)) : 22,
+          hiClear: Number.isFinite(hic) ? Math.max(0, Math.min(100, hic)) : 0,
         };
       }
 
@@ -5800,6 +6205,95 @@
         filterFgAmountVal.textContent = filterFgAmount.value + "%";
         filterFgSkyVal.textContent = filterFgSky.value + "%";
         filterFgCoolVal.textContent = filterFgCool.value + "%";
+        var fhh = Math.round(Number(filterFgFogHue.value) || 50);
+        if (fhh < 42) filterFgFogHueVal.textContent = "偏暖";
+        else if (fhh > 58) filterFgFogHueVal.textContent = "偏冷";
+        else filterFgFogHueVal.textContent = "中性";
+        var fft = Math.round(Number(filterFgFogTint.value) || 50);
+        if (fft < 42) filterFgFogTintVal.textContent = "偏绿";
+        else if (fft > 58) filterFgFogTintVal.textContent = "偏洋红";
+        else filterFgFogTintVal.textContent = "中性";
+        filterFgFogBrightVal.textContent = filterFgFogBright.value + "%";
+        var ffs = Math.round(Number(filterFgFogSat.value) || 50);
+        if (ffs < 40) filterFgFogSatVal.textContent = "偏淡";
+        else if (ffs > 60) filterFgFogSatVal.textContent = "偏艳";
+        else filterFgFogSatVal.textContent = "中性";
+        filterFgHorizonVal.textContent = filterFgHorizon.value + "%";
+        filterFgSpreadVal.textContent = filterFgSpread.value + "%";
+        filterFgWispVal.textContent = filterFgWisp.value + "%";
+        filterFgNearClearVal.textContent = filterFgNearClear.value + "%";
+        filterFgClassicVal.textContent = filterFgClassic.value + "%";
+        filterFgUniformVal.textContent = filterFgUniform.value + "%";
+        filterFgCapVal.textContent = filterFgCap.value + "%";
+        var fgc = Math.round(Number(filterFgCurve.value) || 50);
+        if (fgc < 38) filterFgCurveVal.textContent = "很柔";
+        else if (fgc < 45) filterFgCurveVal.textContent = "偏柔";
+        else if (fgc > 62) filterFgCurveVal.textContent = "很利";
+        else if (fgc > 55) filterFgCurveVal.textContent = "偏利";
+        else filterFgCurveVal.textContent = "中性";
+        filterFgHorizVal.textContent = filterFgHoriz.value + "%";
+        filterFgHiClearVal.textContent = filterFgHiClear.value + "%";
+      }
+
+      function readVividEdgeOptionsFromDom() {
+        var ex = Number(filterVeExtract.value);
+        var sp = Number(filterVeSpread.value);
+        var ik = Number(filterVeInk.value);
+        var hb = Number(filterVeHueBands.value);
+        var vb = Number(filterVeValBands.value);
+        var sa = Number(filterVeSat.value);
+        var eh = Number(filterVeEdgeHue.value);
+        return {
+          extract: Number.isFinite(ex) ? Math.max(0, Math.min(100, ex)) : 54,
+          spread: Number.isFinite(sp) ? Math.max(0, Math.min(100, sp)) : 36,
+          ink: Number.isFinite(ik) ? Math.max(0, Math.min(100, ik)) : 72,
+          hueBands: Number.isFinite(hb) ? Math.max(4, Math.min(14, Math.round(hb))) : 7,
+          valBands: Number.isFinite(vb) ? Math.max(2, Math.min(8, Math.round(vb))) : 4,
+          sat: Number.isFinite(sa) ? Math.max(0, Math.min(100, sa)) : 80,
+          edgeHue: Number.isFinite(eh) ? Math.max(0, Math.min(100, eh)) : 56,
+        };
+      }
+
+      function syncVividEdgeParamLabels() {
+        filterVeExtractVal.textContent = filterVeExtract.value + "%";
+        filterVeSpreadVal.textContent = filterVeSpread.value + "%";
+        filterVeInkVal.textContent = filterVeInk.value + "%";
+        filterVeHueBandsVal.textContent = String(Math.round(Number(filterVeHueBands.value) || 7));
+        filterVeValBandsVal.textContent = String(Math.round(Number(filterVeValBands.value) || 4));
+        filterVeSatVal.textContent = filterVeSat.value + "%";
+        filterVeEdgeHueVal.textContent = filterVeEdgeHue.value + "%";
+      }
+
+      function readHeatHazeOptionsFromDom() {
+        var a = Number(filterHhAmp.value);
+        var sc = Number(filterHhScale.value);
+        var gr = Number(filterHhGround.value);
+        var ch = Number(filterHhChr.value);
+        var wn = Number(filterHhWind.value);
+        var fn = Number(filterHhFine.value);
+        var bl = Number(filterHhBlur.value);
+        var rt = Number(filterHhRetain.value);
+        return {
+          intensity: Number.isFinite(a) ? Math.max(0, Math.min(100, a)) : 38,
+          scale: Number.isFinite(sc) ? Math.max(0, Math.min(100, sc)) : 46,
+          ground: Number.isFinite(gr) ? Math.max(0, Math.min(100, gr)) : 52,
+          chromatic: Number.isFinite(ch) ? Math.max(0, Math.min(100, ch)) : 18,
+          wind: Number.isFinite(wn) ? Math.max(0, Math.min(100, wn)) : 50,
+          fine: Number.isFinite(fn) ? Math.max(0, Math.min(100, fn)) : 32,
+          blur: Number.isFinite(bl) ? Math.max(0, Math.min(100, bl)) : 14,
+          retain: Number.isFinite(rt) ? Math.max(0, Math.min(100, rt)) : 24,
+        };
+      }
+
+      function syncHeatHazeParamLabels() {
+        filterHhAmpVal.textContent = filterHhAmp.value + "%";
+        filterHhScaleVal.textContent = filterHhScale.value + "%";
+        filterHhGroundVal.textContent = filterHhGround.value + "%";
+        filterHhChrVal.textContent = filterHhChr.value + "%";
+        filterHhWindVal.textContent = filterHhWind.value + "%";
+        filterHhFineVal.textContent = filterHhFine.value + "%";
+        filterHhBlurVal.textContent = filterHhBlur.value + "%";
+        filterHhRetainVal.textContent = filterHhRetain.value + "%";
       }
 
       /** @param {string} type filterModalType.value */
@@ -5814,8 +6308,10 @@
         if (type === "fx_bleach_bypass") return { bleachBypass: readBleachBypassOptionsFromDom() };
         if (type === "fx_analog_grain") return { analogGrain: readAnalogGrainOptionsFromDom() };
         if (type === "fx_exposure_recovery") return { exposureRecovery: readExposureRecoveryOptionsFromDom() };
-        if (type === "fx_temp_tint") return { tempTint: readTempTintOptionsFromDom() };
+        if (type === "fx_underwater") return { underwater: readUnderwaterOptionsFromDom() };
         if (type === "fx_atmospheric_fog") return { atmosphericFog: readAtmosphericFogOptionsFromDom() };
+        if (type === "fx_vivid_edge") return { vividEdge: readVividEdgeOptionsFromDom() };
+        if (type === "fx_heat_haze") return { heatHaze: readHeatHazeOptionsFromDom() };
         return undefined;
       }
 
@@ -6062,11 +6558,16 @@
           d.erHighlight = 36;
           return d;
         }
-        if (t === "fx_temp_tint") {
-          d.strength = 86;
-          d.ctWarmth = 50;
-          d.ctTint = 50;
-          d.ctAmount = 58;
+        if (t === "fx_underwater") {
+          d.strength = 82;
+          d.uwPath = 48;
+          d.uwScatter = 52;
+          d.uwTurbid = 38;
+          d.uwHue = 54;
+          d.uwCaustics = 42;
+          d.uwCausScale = 48;
+          d.uwLightX = 52;
+          d.uwLightY = 28;
           return d;
         }
         if (t === "fx_atmospheric_fog") {
@@ -6074,6 +6575,43 @@
           d.fgAmount = 34;
           d.fgSky = 52;
           d.fgCool = 46;
+          d.fgFogHue = 50;
+          d.fgFogTint = 50;
+          d.fgFogBright = 50;
+          d.fgFogSat = 50;
+          d.fgHorizon = 24;
+          d.fgSpread = 44;
+          d.fgWisp = 34;
+          d.fgNearClear = 28;
+          d.fgClassic = 40;
+          d.fgUniform = 14;
+          d.fgCap = 90;
+          d.fgCurve = 50;
+          d.fgHoriz = 22;
+          d.fgHiClear = 0;
+          return d;
+        }
+        if (t === "fx_vivid_edge") {
+          d.strength = 84;
+          d.veExtract = 54;
+          d.veSpread = 36;
+          d.veInk = 72;
+          d.veHueBands = 7;
+          d.veValBands = 4;
+          d.veSat = 80;
+          d.veEdgeHue = 56;
+          return d;
+        }
+        if (t === "fx_heat_haze") {
+          d.strength = 72;
+          d.hhAmp = 38;
+          d.hhScale = 46;
+          d.hhGround = 52;
+          d.hhChr = 18;
+          d.hhWind = 50;
+          d.hhFine = 32;
+          d.hhBlur = 14;
+          d.hhRetain = 24;
           return d;
         }
         return d;
@@ -6197,13 +6735,23 @@
           var erH = Number(filterErHighlight.value);
           s.erHighlight = Number.isFinite(erH) ? Math.max(0, Math.min(100, erH)) : 36;
         }
-        if (type === "fx_temp_tint") {
-          var ctW = Number(filterCtWarmth.value);
-          s.ctWarmth = Number.isFinite(ctW) ? Math.max(0, Math.min(100, ctW)) : 50;
-          var ctT = Number(filterCtTint.value);
-          s.ctTint = Number.isFinite(ctT) ? Math.max(0, Math.min(100, ctT)) : 50;
-          var ctA = Number(filterCtAmount.value);
-          s.ctAmount = Number.isFinite(ctA) ? Math.max(0, Math.min(100, ctA)) : 58;
+        if (type === "fx_underwater") {
+          var uwP = Number(filterUwPath.value);
+          s.uwPath = Number.isFinite(uwP) ? Math.max(0, Math.min(100, uwP)) : 48;
+          var uwSc = Number(filterUwScatter.value);
+          s.uwScatter = Number.isFinite(uwSc) ? Math.max(0, Math.min(100, uwSc)) : 52;
+          var uwTb = Number(filterUwTurbid.value);
+          s.uwTurbid = Number.isFinite(uwTb) ? Math.max(0, Math.min(100, uwTb)) : 38;
+          var uwH = Number(filterUwHue.value);
+          s.uwHue = Number.isFinite(uwH) ? Math.max(0, Math.min(100, uwH)) : 54;
+          var uwC = Number(filterUwCaustics.value);
+          s.uwCaustics = Number.isFinite(uwC) ? Math.max(0, Math.min(100, uwC)) : 42;
+          var uwCs = Number(filterUwCausScale.value);
+          s.uwCausScale = Number.isFinite(uwCs) ? Math.max(10, Math.min(100, uwCs)) : 48;
+          var uwLX = Number(filterUwLightX.value);
+          s.uwLightX = Number.isFinite(uwLX) ? Math.max(0, Math.min(100, uwLX)) : 52;
+          var uwLY = Number(filterUwLightY.value);
+          s.uwLightY = Number.isFinite(uwLY) ? Math.max(0, Math.min(100, uwLY)) : 28;
         }
         if (type === "fx_atmospheric_fog") {
           var fgA = Number(filterFgAmount.value);
@@ -6212,6 +6760,55 @@
           s.fgSky = Number.isFinite(fgS) ? Math.max(0, Math.min(100, fgS)) : 52;
           var fgC = Number(filterFgCool.value);
           s.fgCool = Number.isFinite(fgC) ? Math.max(0, Math.min(100, fgC)) : 46;
+          var fgFH = Number(filterFgFogHue.value);
+          s.fgFogHue = Number.isFinite(fgFH) ? Math.max(0, Math.min(100, fgFH)) : 50;
+          var fgFT = Number(filterFgFogTint.value);
+          s.fgFogTint = Number.isFinite(fgFT) ? Math.max(0, Math.min(100, fgFT)) : 50;
+          var fgFB = Number(filterFgFogBright.value);
+          s.fgFogBright = Number.isFinite(fgFB) ? Math.max(0, Math.min(100, fgFB)) : 50;
+          var fgFS = Number(filterFgFogSat.value);
+          s.fgFogSat = Number.isFinite(fgFS) ? Math.max(0, Math.min(100, fgFS)) : 50;
+          var fgH = Number(filterFgHorizon.value);
+          s.fgHorizon = Number.isFinite(fgH) ? Math.max(0, Math.min(100, fgH)) : 24;
+          var fgSp = Number(filterFgSpread.value);
+          s.fgSpread = Number.isFinite(fgSp) ? Math.max(2, Math.min(92, fgSp)) : 44;
+          var fgW = Number(filterFgWisp.value);
+          s.fgWisp = Number.isFinite(fgW) ? Math.max(0, Math.min(100, fgW)) : 34;
+          var fgN = Number(filterFgNearClear.value);
+          s.fgNearClear = Number.isFinite(fgN) ? Math.max(0, Math.min(100, fgN)) : 28;
+          var fgCl = Number(filterFgClassic.value);
+          s.fgClassic = Number.isFinite(fgCl) ? Math.max(0, Math.min(100, fgCl)) : 40;
+          var fgU = Number(filterFgUniform.value);
+          s.fgUniform = Number.isFinite(fgU) ? Math.max(0, Math.min(100, fgU)) : 14;
+          var fgCp = Number(filterFgCap.value);
+          s.fgCap = Number.isFinite(fgCp) ? Math.max(42, Math.min(100, fgCp)) : 90;
+          var fgCv = Number(filterFgCurve.value);
+          s.fgCurve = Number.isFinite(fgCv) ? Math.max(0, Math.min(100, fgCv)) : 50;
+          var fgHz = Number(filterFgHoriz.value);
+          s.fgHoriz = Number.isFinite(fgHz) ? Math.max(0, Math.min(100, fgHz)) : 22;
+          var fgHi = Number(filterFgHiClear.value);
+          s.fgHiClear = Number.isFinite(fgHi) ? Math.max(0, Math.min(100, fgHi)) : 0;
+        }
+        if (type === "fx_vivid_edge") {
+          s.veExtract = Number.isFinite(Number(filterVeExtract.value)) ? Math.max(0, Math.min(100, Number(filterVeExtract.value))) : 54;
+          s.veSpread = Number.isFinite(Number(filterVeSpread.value)) ? Math.max(0, Math.min(100, Number(filterVeSpread.value))) : 36;
+          s.veInk = Number.isFinite(Number(filterVeInk.value)) ? Math.max(0, Math.min(100, Number(filterVeInk.value))) : 72;
+          var veHb = Number(filterVeHueBands.value);
+          s.veHueBands = Number.isFinite(veHb) ? Math.max(4, Math.min(14, Math.round(veHb))) : 7;
+          var veVb = Number(filterVeValBands.value);
+          s.veValBands = Number.isFinite(veVb) ? Math.max(2, Math.min(8, Math.round(veVb))) : 4;
+          s.veSat = Number.isFinite(Number(filterVeSat.value)) ? Math.max(0, Math.min(100, Number(filterVeSat.value))) : 80;
+          s.veEdgeHue = Number.isFinite(Number(filterVeEdgeHue.value)) ? Math.max(0, Math.min(100, Number(filterVeEdgeHue.value))) : 56;
+        }
+        if (type === "fx_heat_haze") {
+          s.hhAmp = Number.isFinite(Number(filterHhAmp.value)) ? Math.max(0, Math.min(100, Number(filterHhAmp.value))) : 38;
+          s.hhScale = Number.isFinite(Number(filterHhScale.value)) ? Math.max(0, Math.min(100, Number(filterHhScale.value))) : 46;
+          s.hhGround = Number.isFinite(Number(filterHhGround.value)) ? Math.max(0, Math.min(100, Number(filterHhGround.value))) : 52;
+          s.hhChr = Number.isFinite(Number(filterHhChr.value)) ? Math.max(0, Math.min(100, Number(filterHhChr.value))) : 18;
+          s.hhWind = Number.isFinite(Number(filterHhWind.value)) ? Math.max(0, Math.min(100, Number(filterHhWind.value))) : 50;
+          s.hhFine = Number.isFinite(Number(filterHhFine.value)) ? Math.max(0, Math.min(100, Number(filterHhFine.value))) : 32;
+          s.hhBlur = Number.isFinite(Number(filterHhBlur.value)) ? Math.max(0, Math.min(100, Number(filterHhBlur.value))) : 14;
+          s.hhRetain = Number.isFinite(Number(filterHhRetain.value)) ? Math.max(0, Math.min(100, Number(filterHhRetain.value))) : 24;
         }
         if (type === "if_adventure") {
           s.ifPreset = readIfAdventurePresetFromDom();
@@ -6372,14 +6969,24 @@
           filterErHighlight.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(erH2) ? erH2 : def.erHighlight))));
           syncExposureRecoveryParamLabels();
         }
-        if (t === "fx_temp_tint") {
-          var ctW2 = Number(s.ctWarmth);
-          filterCtWarmth.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(ctW2) ? ctW2 : def.ctWarmth))));
-          var ctT2 = Number(s.ctTint);
-          filterCtTint.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(ctT2) ? ctT2 : def.ctTint))));
-          var ctA2 = Number(s.ctAmount);
-          filterCtAmount.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(ctA2) ? ctA2 : def.ctAmount))));
-          syncTempTintParamLabels();
+        if (t === "fx_underwater") {
+          var uwP2 = Number(s.uwPath);
+          filterUwPath.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(uwP2) ? uwP2 : def.uwPath))));
+          var uwSc2 = Number(s.uwScatter);
+          filterUwScatter.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(uwSc2) ? uwSc2 : def.uwScatter))));
+          var uwTb2 = Number(s.uwTurbid);
+          filterUwTurbid.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(uwTb2) ? uwTb2 : def.uwTurbid))));
+          var uwH2 = Number(s.uwHue);
+          filterUwHue.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(uwH2) ? uwH2 : def.uwHue))));
+          var uwC2 = Number(s.uwCaustics);
+          filterUwCaustics.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(uwC2) ? uwC2 : def.uwCaustics))));
+          var uwCs2 = Number(s.uwCausScale);
+          filterUwCausScale.value = String(Math.max(10, Math.min(100, Math.round(Number.isFinite(uwCs2) ? uwCs2 : def.uwCausScale))));
+          var uwLX2 = Number(s.uwLightX);
+          filterUwLightX.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(uwLX2) ? uwLX2 : def.uwLightX))));
+          var uwLY2 = Number(s.uwLightY);
+          filterUwLightY.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(uwLY2) ? uwLY2 : def.uwLightY))));
+          syncUnderwaterParamLabels();
         }
         if (t === "fx_atmospheric_fog") {
           var fgA2 = Number(s.fgAmount);
@@ -6388,7 +6995,56 @@
           filterFgSky.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgS2) ? fgS2 : def.fgSky))));
           var fgC2 = Number(s.fgCool);
           filterFgCool.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgC2) ? fgC2 : def.fgCool))));
+          var fgFH2 = Number(s.fgFogHue);
+          filterFgFogHue.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgFH2) ? fgFH2 : def.fgFogHue))));
+          var fgFT2 = Number(s.fgFogTint);
+          filterFgFogTint.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgFT2) ? fgFT2 : def.fgFogTint))));
+          var fgFB2 = Number(s.fgFogBright);
+          filterFgFogBright.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgFB2) ? fgFB2 : def.fgFogBright))));
+          var fgFS2 = Number(s.fgFogSat);
+          filterFgFogSat.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgFS2) ? fgFS2 : def.fgFogSat))));
+          var fgH2 = Number(s.fgHorizon);
+          filterFgHorizon.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgH2) ? fgH2 : def.fgHorizon))));
+          var fgSp2 = Number(s.fgSpread);
+          filterFgSpread.value = String(Math.max(2, Math.min(92, Math.round(Number.isFinite(fgSp2) ? fgSp2 : def.fgSpread))));
+          var fgW2 = Number(s.fgWisp);
+          filterFgWisp.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgW2) ? fgW2 : def.fgWisp))));
+          var fgN2 = Number(s.fgNearClear);
+          filterFgNearClear.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgN2) ? fgN2 : def.fgNearClear))));
+          var fgCl2 = Number(s.fgClassic);
+          filterFgClassic.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgCl2) ? fgCl2 : def.fgClassic))));
+          var fgU2 = Number(s.fgUniform);
+          filterFgUniform.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgU2) ? fgU2 : def.fgUniform))));
+          var fgCp2 = Number(s.fgCap);
+          filterFgCap.value = String(Math.max(42, Math.min(100, Math.round(Number.isFinite(fgCp2) ? fgCp2 : def.fgCap))));
+          var fgCv2 = Number(s.fgCurve);
+          filterFgCurve.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgCv2) ? fgCv2 : def.fgCurve))));
+          var fgHz2 = Number(s.fgHoriz);
+          filterFgHoriz.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgHz2) ? fgHz2 : def.fgHoriz))));
+          var fgHi2 = Number(s.fgHiClear);
+          filterFgHiClear.value = String(Math.max(0, Math.min(100, Math.round(Number.isFinite(fgHi2) ? fgHi2 : def.fgHiClear))));
           syncAtmosphericFogParamLabels();
+        }
+        if (t === "fx_vivid_edge") {
+          filterVeExtract.value = String(Math.max(0, Math.min(100, Math.round(Number(s.veExtract) || def.veExtract))));
+          filterVeSpread.value = String(Math.max(0, Math.min(100, Math.round(Number(s.veSpread) || def.veSpread))));
+          filterVeInk.value = String(Math.max(0, Math.min(100, Math.round(Number(s.veInk) || def.veInk))));
+          filterVeHueBands.value = String(Math.max(4, Math.min(14, Math.round(Number(s.veHueBands) || def.veHueBands))));
+          filterVeValBands.value = String(Math.max(2, Math.min(8, Math.round(Number(s.veValBands) || def.veValBands))));
+          filterVeSat.value = String(Math.max(0, Math.min(100, Math.round(Number(s.veSat) || def.veSat))));
+          filterVeEdgeHue.value = String(Math.max(0, Math.min(100, Math.round(Number(s.veEdgeHue) || def.veEdgeHue))));
+          syncVividEdgeParamLabels();
+        }
+        if (t === "fx_heat_haze") {
+          filterHhAmp.value = String(Math.max(0, Math.min(100, Math.round(Number(s.hhAmp) || def.hhAmp))));
+          filterHhScale.value = String(Math.max(0, Math.min(100, Math.round(Number(s.hhScale) || def.hhScale))));
+          filterHhGround.value = String(Math.max(0, Math.min(100, Math.round(Number(s.hhGround) || def.hhGround))));
+          filterHhChr.value = String(Math.max(0, Math.min(100, Math.round(Number(s.hhChr) || def.hhChr))));
+          filterHhWind.value = String(Math.max(0, Math.min(100, Math.round(Number(s.hhWind) || def.hhWind))));
+          filterHhFine.value = String(Math.max(0, Math.min(100, Math.round(Number(s.hhFine) || def.hhFine))));
+          filterHhBlur.value = String(Math.max(0, Math.min(100, Math.round(Number(s.hhBlur) || def.hhBlur))));
+          filterHhRetain.value = String(Math.max(0, Math.min(100, Math.round(Number(s.hhRetain) || def.hhRetain))));
+          syncHeatHazeParamLabels();
         }
         if (t === "if_adventure") {
           setIfAdventurePresetRadio(s.ifPreset || def.ifPreset);
@@ -6717,15 +7373,30 @@
         } else if (resetKey === "erHighlight" && t === "fx_exposure_recovery") {
           filterErHighlight.value = String(def.erHighlight);
           syncExposureRecoveryParamLabels();
-        } else if (resetKey === "ctWarmth" && t === "fx_temp_tint") {
-          filterCtWarmth.value = String(def.ctWarmth);
-          syncTempTintParamLabels();
-        } else if (resetKey === "ctTint" && t === "fx_temp_tint") {
-          filterCtTint.value = String(def.ctTint);
-          syncTempTintParamLabels();
-        } else if (resetKey === "ctAmount" && t === "fx_temp_tint") {
-          filterCtAmount.value = String(def.ctAmount);
-          syncTempTintParamLabels();
+        } else if (resetKey === "uwPath" && t === "fx_underwater") {
+          filterUwPath.value = String(def.uwPath);
+          syncUnderwaterParamLabels();
+        } else if (resetKey === "uwScatter" && t === "fx_underwater") {
+          filterUwScatter.value = String(def.uwScatter);
+          syncUnderwaterParamLabels();
+        } else if (resetKey === "uwTurbid" && t === "fx_underwater") {
+          filterUwTurbid.value = String(def.uwTurbid);
+          syncUnderwaterParamLabels();
+        } else if (resetKey === "uwHue" && t === "fx_underwater") {
+          filterUwHue.value = String(def.uwHue);
+          syncUnderwaterParamLabels();
+        } else if (resetKey === "uwCaustics" && t === "fx_underwater") {
+          filterUwCaustics.value = String(def.uwCaustics);
+          syncUnderwaterParamLabels();
+        } else if (resetKey === "uwCausScale" && t === "fx_underwater") {
+          filterUwCausScale.value = String(def.uwCausScale);
+          syncUnderwaterParamLabels();
+        } else if (resetKey === "uwLightX" && t === "fx_underwater") {
+          filterUwLightX.value = String(def.uwLightX);
+          syncUnderwaterParamLabels();
+        } else if (resetKey === "uwLightY" && t === "fx_underwater") {
+          filterUwLightY.value = String(def.uwLightY);
+          syncUnderwaterParamLabels();
         } else if (resetKey === "fgAmount" && t === "fx_atmospheric_fog") {
           filterFgAmount.value = String(def.fgAmount);
           syncAtmosphericFogParamLabels();
@@ -6735,6 +7406,93 @@
         } else if (resetKey === "fgCool" && t === "fx_atmospheric_fog") {
           filterFgCool.value = String(def.fgCool);
           syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgFogHue" && t === "fx_atmospheric_fog") {
+          filterFgFogHue.value = String(def.fgFogHue);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgFogTint" && t === "fx_atmospheric_fog") {
+          filterFgFogTint.value = String(def.fgFogTint);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgFogBright" && t === "fx_atmospheric_fog") {
+          filterFgFogBright.value = String(def.fgFogBright);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgFogSat" && t === "fx_atmospheric_fog") {
+          filterFgFogSat.value = String(def.fgFogSat);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgHorizon" && t === "fx_atmospheric_fog") {
+          filterFgHorizon.value = String(def.fgHorizon);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgSpread" && t === "fx_atmospheric_fog") {
+          filterFgSpread.value = String(def.fgSpread);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgWisp" && t === "fx_atmospheric_fog") {
+          filterFgWisp.value = String(def.fgWisp);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgNearClear" && t === "fx_atmospheric_fog") {
+          filterFgNearClear.value = String(def.fgNearClear);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgClassic" && t === "fx_atmospheric_fog") {
+          filterFgClassic.value = String(def.fgClassic);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgUniform" && t === "fx_atmospheric_fog") {
+          filterFgUniform.value = String(def.fgUniform);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgCap" && t === "fx_atmospheric_fog") {
+          filterFgCap.value = String(def.fgCap);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgCurve" && t === "fx_atmospheric_fog") {
+          filterFgCurve.value = String(def.fgCurve);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgHoriz" && t === "fx_atmospheric_fog") {
+          filterFgHoriz.value = String(def.fgHoriz);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "fgHiClear" && t === "fx_atmospheric_fog") {
+          filterFgHiClear.value = String(def.fgHiClear);
+          syncAtmosphericFogParamLabels();
+        } else if (resetKey === "veExtract" && t === "fx_vivid_edge") {
+          filterVeExtract.value = String(def.veExtract);
+          syncVividEdgeParamLabels();
+        } else if (resetKey === "veSpread" && t === "fx_vivid_edge") {
+          filterVeSpread.value = String(def.veSpread);
+          syncVividEdgeParamLabels();
+        } else if (resetKey === "veInk" && t === "fx_vivid_edge") {
+          filterVeInk.value = String(def.veInk);
+          syncVividEdgeParamLabels();
+        } else if (resetKey === "veHueBands" && t === "fx_vivid_edge") {
+          filterVeHueBands.value = String(def.veHueBands);
+          syncVividEdgeParamLabels();
+        } else if (resetKey === "veValBands" && t === "fx_vivid_edge") {
+          filterVeValBands.value = String(def.veValBands);
+          syncVividEdgeParamLabels();
+        } else if (resetKey === "veSat" && t === "fx_vivid_edge") {
+          filterVeSat.value = String(def.veSat);
+          syncVividEdgeParamLabels();
+        } else if (resetKey === "veEdgeHue" && t === "fx_vivid_edge") {
+          filterVeEdgeHue.value = String(def.veEdgeHue);
+          syncVividEdgeParamLabels();
+        } else if (resetKey === "hhAmp" && t === "fx_heat_haze") {
+          filterHhAmp.value = String(def.hhAmp);
+          syncHeatHazeParamLabels();
+        } else if (resetKey === "hhScale" && t === "fx_heat_haze") {
+          filterHhScale.value = String(def.hhScale);
+          syncHeatHazeParamLabels();
+        } else if (resetKey === "hhGround" && t === "fx_heat_haze") {
+          filterHhGround.value = String(def.hhGround);
+          syncHeatHazeParamLabels();
+        } else if (resetKey === "hhChr" && t === "fx_heat_haze") {
+          filterHhChr.value = String(def.hhChr);
+          syncHeatHazeParamLabels();
+        } else if (resetKey === "hhWind" && t === "fx_heat_haze") {
+          filterHhWind.value = String(def.hhWind);
+          syncHeatHazeParamLabels();
+        } else if (resetKey === "hhFine" && t === "fx_heat_haze") {
+          filterHhFine.value = String(def.hhFine);
+          syncHeatHazeParamLabels();
+        } else if (resetKey === "hhBlur" && t === "fx_heat_haze") {
+          filterHhBlur.value = String(def.hhBlur);
+          syncHeatHazeParamLabels();
+        } else if (resetKey === "hhRetain" && t === "fx_heat_haze") {
+          filterHhRetain.value = String(def.hhRetain);
+          syncHeatHazeParamLabels();
         } else {
           return;
         }
@@ -6833,8 +7591,58 @@
           return t === "fx_bleach_bypass";
         if (key === "grainAmp" || key === "grainSize" || key === "grainColor" || key === "grainTexture" || key === "grainShadow") return t === "fx_analog_grain";
         if (key === "erExp" || key === "erShadow" || key === "erHighlight") return t === "fx_exposure_recovery";
-        if (key === "ctWarmth" || key === "ctTint" || key === "ctAmount") return t === "fx_temp_tint";
-        if (key === "fgAmount" || key === "fgSky" || key === "fgCool") return t === "fx_atmospheric_fog";
+        if (
+          key === "uwPath" ||
+          key === "uwScatter" ||
+          key === "uwTurbid" ||
+          key === "uwHue" ||
+          key === "uwCaustics" ||
+          key === "uwCausScale" ||
+          key === "uwLightX" ||
+          key === "uwLightY"
+        )
+          return t === "fx_underwater";
+        if (
+          key === "fgAmount" ||
+          key === "fgSky" ||
+          key === "fgCool" ||
+          key === "fgFogHue" ||
+          key === "fgFogTint" ||
+          key === "fgFogBright" ||
+          key === "fgFogSat" ||
+          key === "fgHorizon" ||
+          key === "fgSpread" ||
+          key === "fgWisp" ||
+          key === "fgNearClear" ||
+          key === "fgClassic" ||
+          key === "fgUniform" ||
+          key === "fgCap" ||
+          key === "fgCurve" ||
+          key === "fgHoriz" ||
+          key === "fgHiClear"
+        )
+          return t === "fx_atmospheric_fog";
+        if (
+          key === "veExtract" ||
+          key === "veSpread" ||
+          key === "veInk" ||
+          key === "veHueBands" ||
+          key === "veValBands" ||
+          key === "veSat" ||
+          key === "veEdgeHue"
+        )
+          return t === "fx_vivid_edge";
+        if (
+          key === "hhAmp" ||
+          key === "hhScale" ||
+          key === "hhGround" ||
+          key === "hhChr" ||
+          key === "hhWind" ||
+          key === "hhFine" ||
+          key === "hhBlur" ||
+          key === "hhRetain"
+        )
+          return t === "fx_heat_haze";
         return false;
       }
 
@@ -6949,12 +7757,46 @@
           case "erExp":
           case "erShadow":
           case "erHighlight":
-          case "ctWarmth":
-          case "ctTint":
-          case "ctAmount":
+          case "uwPath":
+          case "uwScatter":
+          case "uwTurbid":
+          case "uwHue":
+          case "uwCaustics":
+          case "uwCausScale":
+          case "uwLightX":
+          case "uwLightY":
           case "fgAmount":
           case "fgSky":
           case "fgCool":
+          case "fgFogHue":
+          case "fgFogTint":
+          case "fgFogBright":
+          case "fgFogSat":
+          case "fgHorizon":
+          case "fgSpread":
+          case "fgWisp":
+          case "fgNearClear":
+          case "fgClassic":
+          case "fgUniform":
+          case "fgCap":
+          case "fgCurve":
+          case "fgHoriz":
+          case "fgHiClear":
+          case "veExtract":
+          case "veSpread":
+          case "veInk":
+          case "veHueBands":
+          case "veValBands":
+          case "veSat":
+          case "veEdgeHue":
+          case "hhAmp":
+          case "hhScale":
+          case "hhGround":
+          case "hhChr":
+          case "hhWind":
+          case "hhFine":
+          case "hhBlur":
+          case "hhRetain":
             return ri(cur[key]) !== ri(def[key]);
           case "grainTexture":
             return normalizeGrainTexture(cur.grainTexture) !== normalizeGrainTexture(def.grainTexture);
@@ -7081,8 +7923,10 @@
         filterBleachBypassExtra.hidden = t !== "fx_bleach_bypass";
         filterAnalogGrainExtra.hidden = t !== "fx_analog_grain";
         filterExposureRecoveryExtra.hidden = t !== "fx_exposure_recovery";
-        filterTempTintExtra.hidden = t !== "fx_temp_tint";
+        filterUnderwaterExtra.hidden = t !== "fx_underwater";
         filterAtmosFogExtra.hidden = t !== "fx_atmospheric_fog";
+        filterVividEdgeExtra.hidden = t !== "fx_vivid_edge";
+        filterHeatHazeExtra.hidden = t !== "fx_heat_haze";
         filterVignetteExtra.hidden = t !== "vignette";
         filterIfAdventureExtra.hidden = t !== "if_adventure";
         var lastF = getOpLastParams(opKeyFilter(t));
@@ -7115,10 +7959,14 @@
           filterGrainAmp.focus();
         } else if (t === "fx_exposure_recovery") {
           filterErExp.focus();
-        } else if (t === "fx_temp_tint") {
-          filterCtWarmth.focus();
+        } else if (t === "fx_underwater") {
+          filterUwPath.focus();
         } else if (t === "fx_atmospheric_fog") {
           filterFgAmount.focus();
+        } else if (t === "fx_vivid_edge") {
+          filterVeExtract.focus();
+        } else if (t === "fx_heat_haze") {
+          filterHhAmp.focus();
         } else if (t === "vignette") {
           filterVignetteCx.focus();
         } else if (t === "if_adventure") {
@@ -7464,15 +8312,20 @@
         const u = 1 - blendT;
         const gmix = (amtPct / 100) * 0.92;
         for (let i = 0; i < d.length; i += 4) {
+          const a0 = od[i + 3];
           let rr = od[i] + gd[i] * gmix;
           let gg = od[i + 1] + gd[i + 1] * gmix;
           let bb = od[i + 2] + gd[i + 2] * gmix;
           rr = Math.max(0, Math.min(255, rr));
           gg = Math.max(0, Math.min(255, gg));
           bb = Math.max(0, Math.min(255, bb));
+          const glowLuma = (gd[i] + gd[i + 1] + gd[i + 2]) / (255 * 3);
+          const glowCov = Math.min(1, glowLuma * gmix * 2.05);
+          const aProc = filterAlphaCompositeTopMedium(a0, glowCov);
           d[i] = Math.max(0, Math.min(255, od[i] * u + rr * blendT));
           d[i + 1] = Math.max(0, Math.min(255, od[i + 1] * u + gg * blendT));
           d[i + 2] = Math.max(0, Math.min(255, od[i + 2] * u + bb * blendT));
+          d[i + 3] = Math.max(0, Math.min(255, Math.round(a0 * u + aProc * blendT)));
         }
       }
 
@@ -7678,47 +8531,107 @@
       }
 
       /**
-       * 色温 / 绿品：白平衡式偏移（强度可调）
+       * 直通道 alpha：上层不透明介质以 coverage 叠在画面上时，α_out = α + (1−α)·coverage，
+       * 与 RGB 的 src*(1−c)+medium*c 一致；透明洞可被雾 / 散射罩等填补。
+       */
+      function filterAlphaCompositeTopMedium(a0byte, coverage01) {
+        const c = Math.max(0, Math.min(1, coverage01));
+        return Math.min(255, Math.round(a0byte + (255 - a0byte) * c));
+      }
+
+      /**
+       * 水下光学：Beer–Lambert 吸收 + 单次散射浑水色 + 浑浊与静态焦散近似
        * @param {Uint8ClampedArray} d
        */
-      function filterTempTintMutate(d, w, h, blendT, opts) {
+      function filterUnderwaterMutate(d, w, h, blendT, opts) {
         opts = opts || {};
         blendT = Math.max(0, Math.min(1, blendT));
         if (blendT <= 0) return;
-        const warmthPct = Math.max(0, Math.min(100, Number(opts.warmth) != null ? Number(opts.warmth) : 50));
-        const tintPct = Math.max(0, Math.min(100, Number(opts.tint) != null ? Number(opts.tint) : 50));
-        const amountPct = Math.max(0, Math.min(100, Number(opts.amount) != null ? Number(opts.amount) : 58));
-        const am = amountPct / 100;
-        const warmK = ((warmthPct - 50) / 50) * 22 * am;
+        const pathPct = Math.max(0, Math.min(100, Number(opts.path) != null ? Number(opts.path) : 48)) / 100;
+        const scatterPct = Math.max(0, Math.min(100, Number(opts.scatter) != null ? Number(opts.scatter) : 52)) / 100;
+        const turbidPct = Math.max(0, Math.min(100, Number(opts.turbid) != null ? Number(opts.turbid) : 38)) / 100;
+        const huePct = Math.max(0, Math.min(100, Number(opts.hue) != null ? Number(opts.hue) : 54)) / 100;
+        const caustPct = Math.max(0, Math.min(100, Number(opts.caustics) != null ? Number(opts.caustics) : 42)) / 100;
+        const causScalePct = Math.max(10, Math.min(100, Number(opts.causScale) != null ? Number(opts.causScale) : 48)) / 100;
+        const lightXPct = Math.max(0, Math.min(100, Number(opts.lightX) != null ? Number(opts.lightX) : 52)) / 100;
+        const lightYPct = Math.max(0, Math.min(100, Number(opts.lightY) != null ? Number(opts.lightY) : 28)) / 100;
+        const invWm = 1 / Math.max(1, w - 1);
+        const invHm = 1 / Math.max(1, h - 1);
+        const lx = lightXPct;
+        const ly = lightYPct;
+        const sunSigma = 0.26 + (1 - turbidPct) * 0.14;
+        const freqBase = 10 + causScalePct * 52;
         const work = ensureFilterScratchSingle(w, h);
         work.data.set(d);
         const s = work.data;
         const u = 1 - blendT;
+        const hr = huePct;
+        const waterR = 52 + (1 - hr) * 42 + turbidPct * 28;
+        const waterG = 148 + hr * 62 + turbidPct * 22;
+        const waterB = 188 + (1 - hr) * 38 + turbidPct * 18;
         for (let i = 0; i < d.length; i += 4) {
+          const p = i >> 2;
+          const row = (p / w) | 0;
+          const col = p - row * w;
+          const xNorm = col * invWm;
+          const yNorm = row * invHm;
           const r0 = s[i];
           const g0 = s[i + 1];
           const b0 = s[i + 2];
-          let rr = r0 + warmK;
-          let gg = g0;
-          let bb = b0 - warmK * 0.92;
-          const tCenter = tintPct - 50;
-          if (tCenter >= 0) {
-            const m = (tCenter / 50) * am;
-            rr += m * 11;
-            gg -= m * 15;
-            bb += m * 9;
-          } else {
-            const g = (-tCenter / 50) * am;
-            gg += g * 13;
-            rr -= g * 6.5;
-            bb -= g * 4.5;
-          }
+          const a0 = s[i + 3];
+          const Y = (r0 * 0.2126 + g0 * 0.7152 + b0 * 0.0722) / 255;
+          const z = Math.max(
+            0,
+            Math.min(1, pathPct * 2.35 * (0.58 * (1 - yNorm) + 0.42 * (1 - Y) + turbidPct * 0.22))
+          );
+          const kMul = 1.15 + turbidPct * 1.85;
+          const kr = Math.min(7.5, (2.65 + turbidPct * 2.1) * z * kMul * pathPct);
+          const kg = Math.min(5.2, (0.52 + turbidPct * 0.42) * z * kMul * pathPct);
+          const kb = Math.min(3.8, (0.22 + turbidPct * 0.18) * z * kMul * pathPct);
+          let rr = r0 * Math.exp(-kr);
+          let gg = g0 * Math.exp(-kg);
+          let bb = b0 * Math.exp(-kb);
+          const chr = hr * z * 5.5;
+          rr -= chr * 0.55;
+          bb += chr * 0.72;
+          const distL = Math.hypot(xNorm - lx, yNorm - ly);
+          const sunSpot = Math.exp(-(distL * distL) / (sunSigma * sunSigma));
+          const px = col * invWm * freqBase;
+          const py = row * invHm * freqBase;
+          let wav =
+            Math.sin(px * 6.2831853 + py * 4.5836623) * 0.42 +
+            Math.sin(px * 13.194689 - py * 10.053096) * 0.28 +
+            Math.sin(px * 23.255292 + py * 7.3303828) * 0.18;
+          const hx = (col / Math.max(14, (w / 38) | 0)) | 0;
+          const hy = (row / Math.max(14, (h / 38) | 0)) | 0;
+          const nhash = frostHash01At(hx, hy, 772) - 0.5;
+          wav *= 1 + nhash * (0.55 + turbidPct * 0.35);
+          const caustPat = 0.5 + 0.5 * wav;
+          const depthAtten = 1 - z * (0.72 + turbidPct * 0.22);
+          const caustStrength =
+            caustPct * sunSpot * depthAtten * (1 - turbidPct * 0.38) * (1.05 + (1 - turbidPct) * 0.35);
+          const delta = (caustPat - 0.5) * 2 * caustStrength;
+          rr += delta * 10 + Math.abs(delta) * caustPct * 6 * sunSpot;
+          gg += delta * 26 + Math.abs(delta) * caustPct * 14 * sunSpot;
+          bb += delta * 30 + Math.abs(delta) * caustPct * 16 * sunSpot;
+          const scatterK = scatterPct * (0.95 + turbidPct * 0.65);
+          const veil = (1 - Math.exp(-scatterK * z * (0.55 + turbidPct * 0.85))) * (0.62 + scatterPct * 0.38);
+          rr = rr * (1 - veil) + waterR * veil;
+          gg = gg * (1 - veil) + waterG * veil;
+          bb = bb * (1 - veil) + waterB * veil;
+          const spark = turbidPct * (0.06 + scatterPct * 0.05) * frostHash01At(col & 255, row & 255, 441);
+          const hiLift = Math.max(0, Y - 0.62);
+          rr += spark * hiLift * 255 * 0.85;
+          gg += spark * hiLift * 255 * 1.1;
+          bb += spark * hiLift * 255 * 1.25;
           rr = Math.max(0, Math.min(255, rr));
           gg = Math.max(0, Math.min(255, gg));
           bb = Math.max(0, Math.min(255, bb));
+          const aProc = filterAlphaCompositeTopMedium(a0, veil);
           d[i] = Math.max(0, Math.min(255, r0 * u + rr * blendT));
           d[i + 1] = Math.max(0, Math.min(255, g0 * u + gg * blendT));
           d[i + 2] = Math.max(0, Math.min(255, b0 * u + bb * blendT));
+          d[i + 3] = Math.max(0, Math.min(255, Math.round(a0 * u + aProc * blendT)));
         }
       }
 
@@ -7733,34 +8646,402 @@
         const amountPct = Math.max(0, Math.min(100, Number(opts.amount) != null ? Number(opts.amount) : 34));
         const skyPct = Math.max(0, Math.min(100, Number(opts.sky) != null ? Number(opts.sky) : 52));
         const coolPct = Math.max(0, Math.min(100, Number(opts.cool) != null ? Number(opts.cool) : 46));
-        const amt0 = (amountPct / 100) * 0.82;
+        const horizonPct = Math.max(0, Math.min(100, Number(opts.horizon) != null ? Number(opts.horizon) : 24));
+        const spreadPct = Math.max(2, Math.min(92, Number(opts.spread) != null ? Number(opts.spread) : 44));
+        const wispPct = Math.max(0, Math.min(100, Number(opts.wisp) != null ? Number(opts.wisp) : 34));
+        const nearClearPct = Math.max(0, Math.min(100, Number(opts.nearClear) != null ? Number(opts.nearClear) : 28));
+        const classicPct = Math.max(0, Math.min(100, Number(opts.classic) != null ? Number(opts.classic) : 40));
+        const uniformPct = Math.max(0, Math.min(100, Number(opts.uniform) != null ? Number(opts.uniform) : 14));
+        const capPct = Math.max(42, Math.min(100, Number(opts.cap) != null ? Number(opts.cap) : 90));
+        const curvePct = Math.max(0, Math.min(100, Number(opts.curve) != null ? Number(opts.curve) : 50));
+        const horizPct = Math.max(0, Math.min(100, Number(opts.horiz) != null ? Number(opts.horiz) : 22));
+        const hiClearPct = Math.max(0, Math.min(100, Number(opts.hiClear) != null ? Number(opts.hiClear) : 0));
+        const amtK = amountPct / 100;
         const skyK = skyPct / 100;
         const cool = coolPct / 100;
-        const fr = 210 + (1 - cool) * 28;
-        const fgc = 218 - cool * 14;
-        const fb = 228 + cool * 22;
+        const hz = horizonPct / 100;
+        const spr = spreadPct / 100;
+        const wispK = wispPct / 100;
+        const nc = nearClearPct / 100;
+        const classicW = classicPct / 100;
+        const uniformW = uniformPct / 100;
+        const horizK = horizPct / 100;
+        const maxFog = 0.45 + (capPct / 100) * 0.52;
+        const gamma = 1.55 - (curvePct / 100) * 1.1;
+        const fogHuePct = Math.max(0, Math.min(100, Number(opts.fogHue) != null ? Number(opts.fogHue) : 50));
+        const fogTintPct = Math.max(0, Math.min(100, Number(opts.fogTint) != null ? Number(opts.fogTint) : 50));
+        const fogBrightPct = Math.max(0, Math.min(100, Number(opts.fogBright) != null ? Number(opts.fogBright) : 50));
+        const fogSatPct = Math.max(0, Math.min(100, Number(opts.fogSat) != null ? Number(opts.fogSat) : 50));
+        let fr = 206 + (1 - cool) * 32;
+        let fgc = 216 - cool * 16;
+        let fb = 232 + cool * 24;
+        const hueAx = (fogHuePct - 50) / 50;
+        if (hueAx < 0) {
+          const a = -hueAx * 0.9;
+          fr = fr * (1 - a) + 244 * a;
+          fgc = fgc * (1 - a) + 226 * a;
+          fb = fb * (1 - a) + 196 * a;
+        } else if (hueAx > 0) {
+          const a = hueAx * 0.9;
+          fr = fr * (1 - a) + 164 * a;
+          fgc = fgc * (1 - a) + 192 * a;
+          fb = fb * (1 - a) + 238 * a;
+        }
+        const tn = (fogTintPct - 50) / 50;
+        fr -= tn * 14;
+        fgc -= tn * 18;
+        fb += tn * 12;
+        const brightMul = 0.58 + (fogBrightPct / 100) * 0.84;
+        fr *= brightMul;
+        fgc *= brightMul;
+        fb *= brightMul;
+        const satAx = (fogSatPct - 50) / 50;
+        let fGray = fr * 0.2126 + fgc * 0.7152 + fb * 0.0722;
+        if (satAx < 0) {
+          const a = -satAx * 0.95;
+          fr = fr * (1 - a) + fGray * a;
+          fgc = fgc * (1 - a) + fGray * a;
+          fb = fb * (1 - a) + fGray * a;
+        } else if (satAx > 0) {
+          const a = satAx * 0.62;
+          fGray = fr * 0.2126 + fgc * 0.7152 + fb * 0.0722;
+          fr = fGray + (fr - fGray) * (1 + a);
+          fgc = fGray + (fgc - fGray) * (1 + a);
+          fb = fGray + (fb - fGray) * (1 + a);
+        }
+        fr = Math.max(0, Math.min(255, fr));
+        fgc = Math.max(0, Math.min(255, fgc));
+        fb = Math.max(0, Math.min(255, fb));
         const invHm = 1 / Math.max(1, h - 1);
+        const invWm = 1 / Math.max(1, w - 1);
+        const sigma = 0.035 + spr * 0.405;
+        const sigmaSq2 = 2 * sigma * sigma;
+        const cell = Math.max(10, (Math.min(w, h) / 22) | 0);
         const work = ensureFilterScratchSingle(w, h);
         work.data.set(d);
         const s = work.data;
         const u = 1 - blendT;
         for (let i = 0; i < d.length; i += 4) {
           const p = i >> 2;
-          const y = ((p / w) | 0) * invHm;
-          const skyGrad = y;
-          const fogMix = amt0 * (0.28 + 0.72 * skyK * (0.12 + 0.88 * skyGrad));
+          const row = (p / w) | 0;
+          const col = p - row * w;
+          const yNorm = row * invHm;
+          const xNorm = col * invWm;
+          const vSky = 1 - yNorm;
+          const dist = yNorm - hz;
+          let band = sigmaSq2 > 1e-8 ? Math.exp(-(dist * dist) / sigmaSq2) : 1;
+          let skyPull = 0.55 + 0.45 * (1 + skyK * (0.55 * vSky + 0.18 * xNorm));
+          skyPull = 1 + (skyPull - 1) * (1 - classicW * 0.92);
+          const legacyRaw = 0.28 + 0.72 * skyK * (0.12 + 0.88 * yNorm);
+          let mask = (1 - classicW) * (0.12 + 0.88 * band) + classicW * legacyRaw;
+          mask = mask + uniformW * (1 - mask) * 0.62;
+          let maskN = (mask - 0.12) / 0.88;
+          maskN = Math.max(0, Math.min(1, maskN));
+          maskN = Math.pow(Math.max(1e-6, maskN), gamma);
+          mask = 0.12 + 0.88 * maskN;
+          const hBias = 1 + horizK * 0.95 * ((xNorm - 0.5) * 2);
+          const groundEase = yNorm * yNorm;
+          const nearMul = 1 - nc * groundEase;
+          const fx = col / cell;
+          const fy = row / cell;
+          const ix = fx | 0;
+          const iy = fy | 0;
+          const tx = fx - ix;
+          const ty = fy - iy;
+          const n00 = frostHash01At(ix, iy, 901);
+          const n10 = frostHash01At(ix + 1, iy, 901);
+          const n01 = frostHash01At(ix, iy + 1, 901);
+          const n11 = frostHash01At(ix + 1, iy + 1, 901);
+          const nx0 = n00 + (n10 - n00) * tx;
+          const nx1 = n01 + (n11 - n01) * tx;
+          const wN = nx0 + (nx1 - nx0) * ty;
+          const wMul = 1 + wispK * 0.62 * (wN - 0.5) * 2;
           const r0 = s[i];
           const g0 = s[i + 1];
           const b0 = s[i + 2];
+          const a0 = s[i + 3];
+          let fogMix =
+            amtK * 1.08 * mask * skyPull * hBias * Math.max(0.08, nearMul) * Math.max(0.55, wMul);
+          const yLuma = (r0 * 0.2126 + g0 * 0.7152 + b0 * 0.0722) / 255;
+          const hiW = Math.max(0, Math.min(1, (yLuma - 0.48) / 0.45));
+          const hiMul = 1 - (hiClearPct / 100) * hiW * 0.92;
+          fogMix *= hiMul;
+          fogMix = Math.max(0, Math.min(maxFog, fogMix));
           let rr = r0 * (1 - fogMix) + fr * fogMix;
           let gg = g0 * (1 - fogMix) + fgc * fogMix;
           let bb = b0 * (1 - fogMix) + fb * fogMix;
           rr = Math.max(0, Math.min(255, rr));
           gg = Math.max(0, Math.min(255, gg));
           bb = Math.max(0, Math.min(255, bb));
+          const aProc = filterAlphaCompositeTopMedium(a0, fogMix);
           d[i] = Math.max(0, Math.min(255, r0 * u + rr * blendT));
           d[i + 1] = Math.max(0, Math.min(255, g0 * u + gg * blendT));
           d[i + 2] = Math.max(0, Math.min(255, b0 * u + bb * blendT));
+          d[i + 3] = Math.max(0, Math.min(255, Math.round(a0 * u + aProc * blendT)));
+        }
+      }
+
+      function filterRgbToHsv255(r, g, b) {
+        r /= 255;
+        g /= 255;
+        b /= 255;
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+        const d = max - min;
+        let h = 0;
+        const s = max <= 1e-10 ? 0 : d / max;
+        const v = max;
+        if (d > 1e-10) {
+          if (max === r) h = ((g - b) / d + (g < b ? 6 : 0)) / 6;
+          else if (max === g) h = ((b - r) / d + 2) / 6;
+          else h = ((r - g) / d + 4) / 6;
+        }
+        return [h, s, v];
+      }
+
+      function filterHsvToRgb255(h, s, v) {
+        h = ((h % 1) + 1) % 1;
+        const i = Math.floor(h * 6);
+        const f = h * 6 - i;
+        const p = v * (1 - s);
+        const q = v * (1 - f * s);
+        const t = v * (1 - (1 - f) * s);
+        let r = 0;
+        let g = 0;
+        let b = 0;
+        switch (i % 6) {
+          case 0:
+            r = v;
+            g = t;
+            b = p;
+            break;
+          case 1:
+            r = q;
+            g = v;
+            b = p;
+            break;
+          case 2:
+            r = p;
+            g = v;
+            b = t;
+            break;
+          case 3:
+            r = p;
+            g = q;
+            b = v;
+            break;
+          case 4:
+            r = t;
+            g = p;
+            b = v;
+            break;
+          default:
+            r = v;
+            g = p;
+            b = q;
+            break;
+        }
+        return [r * 255, g * 255, b * 255];
+      }
+
+      function filterVividEdgeQuantizeRgb(r, g, b, hueBands, valBands, satPct) {
+        const hb = hueBands;
+        const vb = valBands;
+        let hsv = filterRgbToHsv255(r, g, b);
+        let h = hsv[0];
+        let s = hsv[1];
+        let v = hsv[2];
+        const hi = Math.min(hb - 1, Math.floor(h * hb + 1e-9));
+        h = (hi + 0.5) / hb;
+        const satMul = 0.48 + (satPct / 100) * 1.42;
+        s = Math.min(1, Math.max(0.16, s * satMul));
+        const vi = Math.min(vb - 1, Math.floor(v * vb + 1e-9));
+        v = Math.max(0.07, Math.min(1, (vi + 0.38) / vb));
+        const out = filterHsvToRgb255(h, s, v);
+        return [out[0], out[1], out[2]];
+      }
+
+      function filterVividEdgeOutlineRgb(fr, fg, fb, edgeHuePct) {
+        let hsv = filterRgbToHsv255(fr, fg, fb);
+        let h = hsv[0];
+        let s = hsv[1];
+        let v = hsv[2];
+        const rot = 0.12 + (edgeHuePct / 100) * 0.78;
+        h = (h + rot) % 1;
+        s = Math.min(1, Math.max(s, 0.52) * 1.06);
+        v = Math.min(1, v * 1.07);
+        const out = filterHsvToRgb255(h, s, v);
+        return [out[0], out[1], out[2]];
+      }
+
+      /**
+       * 边缘撞色：Sobel 亮度提边 + 纯色分层填色 + 轮廓色相偏移
+       */
+      function filterVividEdgeCollideMutate(d, w, h, blendT, opts) {
+        opts = opts || {};
+        blendT = Math.max(0, Math.min(1, blendT));
+        if (blendT <= 0) return;
+        const extractPct = Math.max(0, Math.min(100, Number(opts.extract) != null ? Number(opts.extract) : 54));
+        const spreadPct = Math.max(0, Math.min(100, Number(opts.spread) != null ? Number(opts.spread) : 36));
+        const inkPct = Math.max(0, Math.min(100, Number(opts.ink) != null ? Number(opts.ink) : 72));
+        const hueBands = Math.max(4, Math.min(14, Math.round(Number(opts.hueBands) != null ? Number(opts.hueBands) : 7)));
+        const valBands = Math.max(2, Math.min(8, Math.round(Number(opts.valBands) != null ? Number(opts.valBands) : 4)));
+        const satPct = Math.max(0, Math.min(100, Number(opts.sat) != null ? Number(opts.sat) : 80));
+        const edgeHuePct = Math.max(0, Math.min(100, Number(opts.edgeHue) != null ? Number(opts.edgeHue) : 56));
+        const work = ensureFilterScratchSingle(w, h);
+        work.data.set(d);
+        const s = work.data;
+        const u = 1 - blendT;
+        const lum = new Float32Array(w * h);
+        const mag0 = new Float32Array(w * h);
+        for (let i = 0; i < d.length; i += 4) {
+          lum[i >> 2] = s[i] * 0.2126 + s[i + 1] * 0.7152 + s[i + 2] * 0.0722;
+        }
+        for (let y = 1; y < h - 1; y++) {
+          const row = y * w;
+          for (let x = 1; x < w - 1; x++) {
+            const p = row + x;
+            const gx = lum[p + 1] - lum[p - 1];
+            const gy = lum[p + w] - lum[p - w];
+            mag0[p] = Math.hypot(gx, gy);
+          }
+        }
+        let mag = mag0;
+        const spreadSteps = Math.round((spreadPct / 100) * 2.8);
+        if (spreadSteps > 0) {
+          const dilBuf = new Float32Array(w * h);
+          let src = mag0;
+          let dst = dilBuf;
+          for (let it = 0; it < spreadSteps; it++) {
+            for (let y = 1; y < h - 1; y++) {
+              const row = y * w;
+              for (let x = 1; x < w - 1; x++) {
+                const p = row + x;
+                let m = src[p];
+                for (let dy = -1; dy <= 1; dy++) {
+                  for (let dx = -1; dx <= 1; dx++) {
+                    const mm = src[p + dx + dy * w];
+                    if (mm > m) m = mm;
+                  }
+                }
+                dst[p] = m;
+              }
+            }
+            const t = src;
+            src = dst;
+            dst = t;
+          }
+          mag = src;
+        }
+        const sensDiv = 22 + (extractPct / 100) * 205;
+        const inkK = inkPct / 100;
+        for (let i = 0; i < d.length; i += 4) {
+          const p = i >> 2;
+          const r0 = s[i];
+          const g0 = s[i + 1];
+          const b0 = s[i + 2];
+          const a0 = s[i + 3];
+          const fill = filterVividEdgeQuantizeRgb(r0, g0, b0, hueBands, valBands, satPct);
+          const edgeCol = filterVividEdgeOutlineRgb(fill[0], fill[1], fill[2], edgeHuePct);
+          const em = mag[p] / sensDiv;
+          let tEdge = (em - (0.06 + extractPct * 0.0018)) / (0.38 + (100 - inkPct) * 0.005);
+          if (tEdge < 0) tEdge = 0;
+          else if (tEdge > 1) tEdge = 1;
+          tEdge *= 0.18 + inkK * 0.88;
+          let rr = fill[0] * (1 - tEdge) + edgeCol[0] * tEdge;
+          let gg = fill[1] * (1 - tEdge) + edgeCol[1] * tEdge;
+          let bb = fill[2] * (1 - tEdge) + edgeCol[2] * tEdge;
+          rr = Math.max(0, Math.min(255, rr));
+          gg = Math.max(0, Math.min(255, gg));
+          bb = Math.max(0, Math.min(255, bb));
+          d[i] = Math.max(0, Math.min(255, r0 * u + rr * blendT));
+          d[i + 1] = Math.max(0, Math.min(255, g0 * u + gg * blendT));
+          d[i + 2] = Math.max(0, Math.min(255, b0 * u + bb * blendT));
+          d[i + 3] = a0;
+        }
+      }
+
+      /**
+       * 热浪蜃景：湍流位移 + 风向/细纹/取样朦胧/细节钉住
+       */
+      function filterHeatHazeMutate(d, w, h, blendT, opts) {
+        opts = opts || {};
+        blendT = Math.max(0, Math.min(1, blendT));
+        if (blendT <= 0) return;
+        const ampPct = Math.max(0, Math.min(100, Number(opts.intensity) != null ? Number(opts.intensity) : 38));
+        const scalePct = Math.max(0, Math.min(100, Number(opts.scale) != null ? Number(opts.scale) : 46));
+        const groundPct = Math.max(0, Math.min(100, Number(opts.ground) != null ? Number(opts.ground) : 52));
+        const chrPct = Math.max(0, Math.min(100, Number(opts.chromatic) != null ? Number(opts.chromatic) : 18));
+        const windPct = Math.max(0, Math.min(100, Number(opts.wind) != null ? Number(opts.wind) : 50));
+        const finePct = Math.max(0, Math.min(100, Number(opts.fine) != null ? Number(opts.fine) : 32));
+        const blurPct = Math.max(0, Math.min(100, Number(opts.blur) != null ? Number(opts.blur) : 14));
+        const retainPct = Math.max(0, Math.min(100, Number(opts.retain) != null ? Number(opts.retain) : 24));
+        const work = ensureFilterScratchSingle(w, h);
+        work.data.set(d);
+        const s = work.data;
+        const u = 1 - blendT;
+        const ampBase = (ampPct / 100) * Math.min(w, h) * 0.038 * (0.55 + blendT * 0.55);
+        const gBias = 0.28 + (groundPct / 100) * 1.38;
+        const cell = Math.max(7, Math.min(w, h) / (7.5 + (scalePct / 100) * 38));
+        const chr = (chrPct / 100) * ampBase * 0.42;
+        const windOfs = (windPct / 100 - 0.5) * ampBase * 1.48;
+        const fineMix = (finePct / 100) * 0.88;
+        const retain = (retainPct / 100) * 0.62;
+        let sampleSrc = s;
+        if (blurPct > 5) {
+          const fuzzy = ensureBlurScratch(w, h).tmpH;
+          fuzzy.data.set(work.data);
+          const br = Math.max(1, Math.round(1 + (blurPct / 100) * 4));
+          separableBoxBlurRound(fuzzy, w, h, br);
+          sampleSrc = fuzzy.data;
+        }
+        for (let i = 0; i < d.length; i += 4) {
+          const p = i >> 2;
+          const x = p % w;
+          const y = (p / w) | 0;
+          const fx = x / cell;
+          const fy = y / cell;
+          const ix = fx | 0;
+          const iy = fy | 0;
+          const tx = fx - ix;
+          const ty = fy - iy;
+          const n00 = frostHash01At(ix, iy, 511) - 0.5;
+          const n10 = frostHash01At(ix + 1, iy, 511) - 0.5;
+          const n01 = frostHash01At(ix, iy + 1, 511) - 0.5;
+          const n11 = frostHash01At(ix + 1, iy + 1, 511) - 0.5;
+          const nx = (n00 + (n10 - n00) * tx + (n01 - n00) * ty + (n11 - n10 - n01 + n00) * tx * ty) * 2;
+          const m00 = frostHash01At(ix, iy, 733) - 0.5;
+          const m10 = frostHash01At(ix + 1, iy, 733) - 0.5;
+          const m01 = frostHash01At(ix, iy + 1, 733) - 0.5;
+          const m11 = frostHash01At(ix + 1, iy + 1, 733) - 0.5;
+          const ny = (m00 + (m10 - m00) * tx + (m01 - m00) * ty + (m11 - m10 - m01 + m00) * tx * ty) * 2;
+          const phase = (y / Math.max(1, h - 1)) * Math.PI * (1.15 + gBias * 2.6) + nx * 6.28318 * (0.55 + (scalePct / 100) * 0.85);
+          const freq = 1.05 + (scalePct / 100) * 2.15;
+          let dx = Math.sin(phase * freq + x * 0.042) * ampBase * (1 + nx * 0.38);
+          let dy = Math.cos(phase * 0.88 + y * 0.036) * ampBase * 0.62 * gBias * (1 + ny * 0.28);
+          dx += windOfs;
+          const phase2 = phase * (1.38 + (finePct / 100) * 1.25) + y * 0.071 + x * 0.053;
+          dx += Math.sin(phase2 * (1.15 + fineMix)) * ampBase * fineMix * 0.52;
+          dy += Math.cos(phase2 * 0.93 + x * 0.019) * ampBase * fineMix * 0.38 * gBias;
+          const r0 = s[i];
+          const g0 = s[i + 1];
+          const b0 = s[i + 2];
+          const a0 = s[i + 3];
+          const pr = sampleBilinearRGBA(sampleSrc, w, h, x + dx + chr, y + dy + chr * 0.35);
+          const pg = sampleBilinearRGBA(sampleSrc, w, h, x + dx * 0.96, y + dy);
+          const pb = sampleBilinearRGBA(sampleSrc, w, h, x + dx - chr * 0.92, y + dy - chr * 0.28);
+          let rr = pr[0] * (1 - retain) + r0 * retain;
+          let gg = pg[1] * (1 - retain) + g0 * retain;
+          let bb = pb[2] * (1 - retain) + b0 * retain;
+          rr = Math.max(0, Math.min(255, rr));
+          gg = Math.max(0, Math.min(255, gg));
+          bb = Math.max(0, Math.min(255, bb));
+          const cov = Math.min(1, (Math.abs(dx) + Math.abs(dy)) / (ampBase * 2.2 + 0.01)) * 0.55;
+          const aProc = filterAlphaCompositeTopMedium(a0, cov * (0.35 + (chrPct / 100) * 0.25));
+          d[i] = Math.max(0, Math.min(255, r0 * u + rr * blendT));
+          d[i + 1] = Math.max(0, Math.min(255, g0 * u + gg * blendT));
+          d[i + 2] = Math.max(0, Math.min(255, b0 * u + bb * blendT));
+          d[i + 3] = Math.max(0, Math.min(255, Math.round(a0 * u + aProc * blendT)));
         }
       }
 
@@ -7932,7 +9213,9 @@
           d[i] = Math.max(0, Math.min(255, (orig[i] * u + c[0] * blendT + sh) | 0));
           d[i + 1] = Math.max(0, Math.min(255, (orig[i + 1] * u + c[1] * blendT + sh) | 0));
           d[i + 2] = Math.max(0, Math.min(255, (orig[i + 2] * u + c[2] * blendT + sh) | 0));
-          d[i + 3] = orig[i + 3];
+          const a0 = orig[i + 3];
+          const aProc = filterAlphaCompositeTopMedium(a0, blendT * 0.52);
+          d[i + 3] = Math.max(0, Math.min(255, Math.round(a0 * u + aProc * blendT)));
         }
       }
 
@@ -9195,13 +10478,18 @@
       filterErExp.addEventListener("input", onExposureRecoveryControlInput);
       filterErShadow.addEventListener("input", onExposureRecoveryControlInput);
       filterErHighlight.addEventListener("input", onExposureRecoveryControlInput);
-      function onTempTintControlInput() {
-        syncTempTintParamLabels();
+      function onUnderwaterControlInput() {
+        syncUnderwaterParamLabels();
         scheduleFilterPreview();
       }
-      filterCtWarmth.addEventListener("input", onTempTintControlInput);
-      filterCtTint.addEventListener("input", onTempTintControlInput);
-      filterCtAmount.addEventListener("input", onTempTintControlInput);
+      filterUwPath.addEventListener("input", onUnderwaterControlInput);
+      filterUwScatter.addEventListener("input", onUnderwaterControlInput);
+      filterUwTurbid.addEventListener("input", onUnderwaterControlInput);
+      filterUwHue.addEventListener("input", onUnderwaterControlInput);
+      filterUwCaustics.addEventListener("input", onUnderwaterControlInput);
+      filterUwCausScale.addEventListener("input", onUnderwaterControlInput);
+      filterUwLightX.addEventListener("input", onUnderwaterControlInput);
+      filterUwLightY.addEventListener("input", onUnderwaterControlInput);
       function onAtmosphericFogControlInput() {
         syncAtmosphericFogParamLabels();
         scheduleFilterPreview();
@@ -9209,6 +10497,43 @@
       filterFgAmount.addEventListener("input", onAtmosphericFogControlInput);
       filterFgSky.addEventListener("input", onAtmosphericFogControlInput);
       filterFgCool.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgFogHue.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgFogTint.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgFogBright.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgFogSat.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgHorizon.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgSpread.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgWisp.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgNearClear.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgClassic.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgUniform.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgCap.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgCurve.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgHoriz.addEventListener("input", onAtmosphericFogControlInput);
+      filterFgHiClear.addEventListener("input", onAtmosphericFogControlInput);
+      function onVividEdgeControlInput() {
+        syncVividEdgeParamLabels();
+        scheduleFilterPreview();
+      }
+      filterVeExtract.addEventListener("input", onVividEdgeControlInput);
+      filterVeSpread.addEventListener("input", onVividEdgeControlInput);
+      filterVeInk.addEventListener("input", onVividEdgeControlInput);
+      filterVeHueBands.addEventListener("input", onVividEdgeControlInput);
+      filterVeValBands.addEventListener("input", onVividEdgeControlInput);
+      filterVeSat.addEventListener("input", onVividEdgeControlInput);
+      filterVeEdgeHue.addEventListener("input", onVividEdgeControlInput);
+      function onHeatHazeControlInput() {
+        syncHeatHazeParamLabels();
+        scheduleFilterPreview();
+      }
+      filterHhAmp.addEventListener("input", onHeatHazeControlInput);
+      filterHhScale.addEventListener("input", onHeatHazeControlInput);
+      filterHhGround.addEventListener("input", onHeatHazeControlInput);
+      filterHhChr.addEventListener("input", onHeatHazeControlInput);
+      filterHhWind.addEventListener("input", onHeatHazeControlInput);
+      filterHhFine.addEventListener("input", onHeatHazeControlInput);
+      filterHhBlur.addEventListener("input", onHeatHazeControlInput);
+      filterHhRetain.addEventListener("input", onHeatHazeControlInput);
       function onVignetteControlInput() {
         syncVignetteParamLabels();
         scheduleFilterPreview();
